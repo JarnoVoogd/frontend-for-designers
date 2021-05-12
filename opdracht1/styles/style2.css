@@ -1,0 +1,313 @@
+/* CSS Document */
+
+/* FONTS */
+@font-face {
+	font-family: 'klmFont';
+	src: url('../fonts/Foundry Context W03 X Bd.ttf') format('ttf');	
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'amazonFont';
+	src: url('../fonts/Foundry Context W03 X Bd.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+/* ALGEMENE STYLING */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+html{
+    width: 100vw;
+    height: 100vw;
+	overflow: hidden;
+}
+
+body {
+	margin-top: 25%;
+	width: auto;
+	height: 50%;
+  	font-family:klmFont, sans-serif;
+  	color:#111;
+  	background-color:#eee;
+  	display: flex;
+  	justify-content: space-between;
+}
+
+
+/* BRAND STYLING */
+
+.klm{
+	background-color: #EBE9E9;
+	flex-grow: 1;
+}
+
+.klm h1{
+	font-family: klmfont;
+	text-transform: uppercase;
+	font-size: 10em;
+	position: relative;
+	text-align: center;
+	top: 25%;
+	
+}
+
+.klm h1 .letterk{
+	position: absolute;
+	transform: translate(-109px, 0px);
+	color: #00A1E4;
+
+}
+
+.klm h1 .letterl{
+	/* position: absolute; */
+	color: #00A1E4;
+}
+
+.klm h1 .letterm{
+	position: absolute;
+	transform: translate(4px, 0px);
+	color: #00A1E4;
+}
+
+.klm h1 .vliegtuig{
+	position: absolute;
+	transform: translate(4px, 0px);
+	display: hidden;
+	
+}
+
+
+
+
+.amazon{
+	position: relative;
+	background-color: rgb(241, 192, 44);
+	flex-grow: 1;
+}
+
+
+
+
+
+@keyframes klmBollen
+ {
+
+
+	0% {
+		transform: skew(0deg) ;
+	}
+
+	25%{
+		
+	}
+
+	30%{
+		
+	}
+
+	35%{
+		
+	}
+
+	40%{
+		
+	}
+
+	45%{
+	
+	}
+
+	44.998%{
+		margin: -248px 0px 0px -161.5px;
+	}
+
+	45% { 
+		transform: scale(0.4);
+	}
+
+	90% {
+		transform: scale(1);
+	}
+
+	99.999%{
+		margin-top: -81px;
+	}
+
+	100% {
+		transform: rotate(0deg) scale(1) ;
+	}
+}
+
+@keyframes klmPlus {
+
+
+	0% {
+		transform: rotate(0deg) ;
+	}
+
+	44.998%{
+		margin-top: -225px;
+	}
+
+	65% {
+		transform: rotate(7200deg) scale(0.5);
+	}
+
+	
+
+	90% {
+		transform: scale(1);
+	}
+
+	99.999%{
+		margin-top: -60px;
+	}
+
+	100% {
+		transform: rotate(7920deg);
+	}
+}
+
+
+
+
+
+
+@keyframes klmBalkje {
+
+
+	0% {
+		transform: rotate(0deg);
+	}
+
+	34.998%{
+		margin-top: -215px;
+	}
+
+	34.999%{
+		margin-left: 71px;
+	}
+
+	35% {
+		transform:  scale(0.4);
+	} 
+
+	40% {
+		margin-top: -215px;
+	}
+
+	45% {
+		margin-left: -300px;
+	}
+
+	49.999% {
+		margin-top: 215px;
+	}
+
+	52.999%{
+		margin-top: 145px;
+	}
+
+	53% {
+		margin-left: 442px;
+	}
+
+	85%{
+		marginl: -135px;
+	}
+
+	85.5%{
+		margin-left: 900px;
+	}
+
+	96%{
+		margin-top: 0px;
+	}
+
+	99.999%{
+		margin-left: 71px;
+	}
+
+	100% {
+		transform: rotate(7560deg) ;
+	}
+} 
+
+
+
+
+
+
+@keyframes klmBollen {
+
+
+	0% {
+		transform: rotate(0deg) ;
+	}
+
+	34.998%{
+		margin: -250px 0px 0px -161.5px;
+	}
+
+	35% { 
+		transform: scale(0.4);
+	}
+
+	35.001% {
+		letter-spacing: -8px;
+	}
+
+	82.499% {
+		margin-left: -187.5px;
+	}
+
+	82.5% {
+		letter-spacing: 12px;
+	}
+
+	99.997%{
+		margin-top: -81px;
+	}
+
+	99.998%{
+		letter-spacing: -8px;
+	}
+
+	99.999%{
+		margin-left: -165px;
+	}
+
+	100% {
+		transform: rotate(0deg) scale(1) ;
+	}
+}
+
+@keyframes klmPlus {
+
+
+	0% {
+		transform: rotate(0deg) ;
+	}
+
+	34.998%{
+		margin-top: -225px;
+	}
+
+	35% {
+		transform: rotate(7200deg) scale(0.5);
+	} 
+
+	99.998%{
+		margin-top: -60px;
+	}
+
+	100% {
+		/* transform: rotate(360deg); */
+		transform: rotate(7560deg) ;
+	}
+}

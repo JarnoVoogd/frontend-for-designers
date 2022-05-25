@@ -16,7 +16,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Opdracht 1 plan
 
-<details open>
+
   <summary> Idee uitwerken na schetsen (voor week 2)</summary>
 
 
@@ -30,7 +30,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
   - anineren zonder JS
   - mijn css slimmer schrijven
  
-</details>
+
 
 
 ## Opdracht 1 reflectie

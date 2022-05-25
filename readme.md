@@ -21,7 +21,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
   ### Je storyboard:
-  <img src="readme-images/moodboard.png" width="375px" alt="storyboard voor opdracht 1">
+  <img src="images/moodboard.png" width="375px" alt="storyboard voor opdracht 1">
 
 
   ### Je ambitie: 

@@ -35,7 +35,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Opdracht 1 reflectie
 
-<details>
+
   <summary>Opdracht 1. 
   Voor opdracht 1 heb ik een animatie gemaakt voor de Koninklijke Luchtvaart Maatschappij, KLM'. 
   De KLM is natuurlijk een luchtvaart maatschappij, en ze hebben dus te maken met vliegen. Mijn idee
@@ -56,4 +56,4 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
   ### Dit was lastig/is niet gelukt:
   Ik had het einde van mijn animatie wat vloeiender willen laten verlopen. Omdat de kroon bestaat uit drie losse onderdelen
   bleek het lastig om rotaties mooi uit te laten voeren. 
-</details>
+

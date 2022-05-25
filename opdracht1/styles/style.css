@@ -1,6 +1,8 @@
 /* CSS Document */
 
+/*********/
 /* FONTS */
+/*********/
 @font-face {
 	font-family: 'klmFont';
 	src: url('../fonts/Foundry Context W03 X Bd.woff') format('woff');	
@@ -8,25 +10,30 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'amazonFont';
-	src: url('../fonts/Foundry Context W03 X Bd.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
 
-/* ALGEMENE STYLING */
+/**************/
+/* CSS REMEDY */
+/**************/
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
 @media (prefers-color-scheme: dark) {
 	:root {
-		--klmachtergrond: #EBE9E9;
+		--klmachtergrond: #002659;
 		--klmblauw: #00A1E4;
-		
-		--amazonachtergrond: #ffff;
-		--amazonoranje: #FF9900;
 		
 		--wit: #ffff;
 		--zwart: #0000;
@@ -38,94 +45,87 @@
 		--klmachtergrond: #EBE9E9;
 		--klmblauw: #00A1E4;
 		
-		--amazonachtergrond: #ffff;
-		--amazonoranje: #FF9900;
-		
 		--wit: #ffff;
 		--zwart: #0000;
 	}
 }
 
 
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+html {
+  background-color: #EBE9E9;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+
 body {
-	margin-top: 5em;
-	width: auto;
-  	color:#111;
-	align-items: center;
-	justify-content: space-evenly;
-	display: flex;
+  font-family: 'klmFont', sans-serif;
+  color:var(--klmblauw);
+  background-color:var(--klmachtergrond);
+  height: 50em;
+  width: 50em;
+  align-items: center;
+  justify-content: space-evenly;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 760px) {
-	body {
-		flex-direction: column-reverse;
-	}
-}
+/* jouw code */
 
-
-/* BRAND STYLING */
-
-.klm {
-	background-color: var(--klmachtergrond);
-	font-family: amazonFont;
-	width: 25%;
-	height: 560px;
-	padding: 65px;
-	align-items: center;
-	text-align: center;
-	display: grid;
-	overflow: hidden;
-	
-	
-}
-
-.klm h1{
+h1{
 	text-transform: uppercase;
 	color: var(--klmblauw);
 	font-size: 6.5em;
 	letter-spacing: -13px;
 }
 
-.klm span{
+span{
 	position: relative;
 }
 
-.klm span:last-child:before {
+span:last-child:before {
 	content: '+';
 	position: absolute;
 	color: var(--klmblauw);
-	margin-left: -36px;
-	margin-top: -60px;
-	font-size: 0.43em;
-	width: 0.77em;
-	height: 0.77em;
+	margin-left: -0.758em;
+	margin-top: -1.32em;
+    font-size: 0.43em;
+    height: 0.77em;
     line-height: 0.62em;
-	padding-right: 13px;
-	
+    padding-right: 13px;
 }
 
-.klm:hover span:last-child:before{
+body:hover span:last-child:before{
 	animation: klmPlus;
 	animation-duration: 9s;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in-out; 
-	animation-direction: alternate;
-	
+	animation-direction: alternate;	
 }
  
-.klm span:last-child::after{
+span:last-child::after{
 	content: '••••';
 	position: absolute;
-	letter-spacing: -8px;
-	margin-left: -165px;
-	margin-top: -81px;
+	letter-spacing: -0.085em;
+	margin-left: -1.72em;
+	margin-top: -0.84em;
 	color: var(--klmblauw);
 	font-size: 6rem;
 	display: inline-block;
 	height: 96px;
 }
 
-.klm:hover span:last-child::after{
+body:hover span:last-child::after{
 	animation: klmBollen;
 	animation-duration: 9s;
 	animation-iteration-count: 1;
@@ -133,15 +133,15 @@ body {
 	animation-direction: alternate;
 }
 
-.klm h1 span:first-child{
+h1 span:first-child{
 	width: 250em;
 }
 
-.klm span:first-child:before{
+span:first-child:before{
 	content: '';
 	position: absolute;
-	margin-left: 71px;
-	margin-top: 0px;
+	margin-left: 0.675em;
+	margin-top: 0em;
 	color: var(--klmblauw);
 	display: inline-block;
 	border-top: solid 15px var(--klmblauw);
@@ -149,19 +149,13 @@ body {
 	width: 95px
 }
 
-.klm:hover span:first-child:before{
+body:hover span:first-child:before{
 	animation: klmBalkje;
 	animation-duration: 9s;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in-out; 
 	animation-direction: alternate;
 }
-
-
-
-
-
-
 
 @keyframes klmBalkje {
 
@@ -171,48 +165,60 @@ body {
 	}
 
 	34.998%{
-		margin-top: -215px;
-	}
-
-	34.999%{
-		margin-left: 71px;
+		margin: -2.08em 0em 0em 0.66em;
 	}
 
 	35% {
 		transform:  scale(0.4);
 	} 
 
-	36% {
-		margin-top: -215px;
-	}
-
-	39% {
-		margin:-215px 0px 0px -250px;
-	}
-
 	40% {
-		margin:-145px 0px 0px -250px;
+		margin: -2.09em 0em 0em 0.78em;
+		transform: rotate(-15deg) scale(0.4);
+	}
+	54% {
+		margin-top: -2.09em;
+		transform: scale(0.4) rotate(-15deg);
 	}
 
-	41% {
-		margin:-145px 0px 0px -250px;
+	55% {
+		margin: -2.08em 0em 0em -4.1em
 	}
 
-
-	82%{
-		margin:-145px 0px 0px 400px;
+	56% {
+		margin: -1.5em 0em 0em -4.2em;
+		transform: scale(0.6) rotate(15deg);
 	}
 
-	86% {
-		margin:-145px 0px 0px 442px;
+	65% {
+		transform:  scale(0.6) rotate(15deg);
+		
 	}
 
-	86.001% {
-		margin:0px 0px 0px 442px;
+	
+
+	75% {
+		margin-top: -1.5em;
+		margin-left: 0.68em;
+		transform:  scale(0.6) rotate(-15deg);
 	}
 
-	95% {
-		margin:0px 0px 0px 71px;
+	77.5% {
+		transform: scale(0.6) rotate(-15deg);
+		margin-top: -1.5em;
+		margin-left: 0.7em;
+	}
+
+	80% {
+		transform: scale(0.6) rotate(0deg);
+		margin-top: -1.5em;
+		margin-left: 0.675em;
+	}
+
+	100% {
+		margin-top: 0em;
+		margin-left: 0.675em;
+		transform: scale(1) rotate(0deg);
 	}
 
 	
@@ -225,46 +231,69 @@ body {
 		transform: rotate(0deg);
 	}
 
-	34.998%{
-		margin: -250px 0px 0px -161.5px;
+	34.999%{
+		margin: -2.6em 0em 0em -1.72em;
 	}
 
 	35% {
-		transform:  scale(0.4);
+		transform:  scale(0.4) rotate(0deg);
+		margin-top: -2.6em;
 	} 
 
-	36% {
-		margin-top: -250px;
-	}
-
 	40% {
-		margin: -250px 0px 0px -536px;
+		margin: -2.6em 0em 0em -1.68em;
+		transform:  scale(0.4) rotate(-15deg);
+		
+
 	}
 
-	41% {
-		margin: -189px 0px 0px -536px;
+    54% {
+		margin-top: -2.6em;
+		transform: scale(0.4) rotate(-15deg);
 	}
 
-	45% {
-		margin: -189px 0px 0px -536px;
+	55% {
+		transform:  scale(0.4) rotate(-15deg);
+		margin: -2.6em 0em 0em -7em;
+	}
+
+	56% {
+		transform:  scale(0.6) rotate(15deg);
+		margin: -2.13em 0em 0em -6.85em;
+	}
+
+	65% {
+		transform:  scale(0.6) rotate(15deg);
+		
 	}
 
 	70% {
-		margin: -189px 0px 0px -165px;
+		transform:  scale(0.6);
 	}
 
-	72% {
-		transform: scale(0.4);
+	75% {
+		transform:  scale(0.6) rotate(-15deg);
+		margin-top: -2.13em;
+		margin-left: -1.72em;
 	}
 
-	72.001% {
-		margin: -189px 0px 0px -165px;
+	77.5% {
+		transform: scale(0.6) rotate(-15deg);
+		margin-top: -2.13em;
+		margin-left: -1.72em;
 	}
 
-	95% {
-		margin: -81px 0px 0px -165px;
+	80% {
+		transform: scale(0.6) rotate(0deg);
+		margin-top: -2.13em;
+		margin-left: -1.72em;
 	}
 
+	100% {
+		transform:  scale(1) rotate(0deg);
+		margin-top: -0.84em;
+		margin-left: -1.72em;
+	}
 	
 }
 
@@ -273,80 +302,66 @@ body {
 
 
 	0% {
-		transform: rotate(0deg) ;
+		
 	}
 
 	34.998% {
-		margin: -225px 0px 0px -36px;
+		margin: -5.02em 0em 0em -0.8em;
 	}
 
 	35% {
 		transform: rotate(7200deg) scale(0.5);
+		margin: -5.02em 0em 0em -0.8em;
 	} 
 
-	36% {
-		margin: -225px 0px 0px -36px;
+	39.9% {
+		margin: -5.02em 0em 0em -0.8em;
 	}
 
-	39% {
-		margin: -225px 0px 0px -350.5px;
+	54% {
+		margin-top: -5.02em;
+		transform: rotate(3600deg) scale(0.5) ;
 	}
 
-	41% {
-		margin: -164px 0px 0px -350.5px;
-	}
+	55% {
+		margin: -5.02em 0em 0em -12em;
+		transform: rotate(3600deg) scale(0.5);
+	} 
 
-	/* 44.5% {
-		transform: rotate(0deg);
+	56% {
+		margin: -4.10em 0em 0em -11.8em;
+		transform: scale(0.7) rotate(3600deg);
+	} 
+
+
+	/* 70% {
+		margin-top: -4.10em;
+		margin-left: -0.758em;
+		transform: scale(0.7) rotate(1080deg);
 	} */
 
-	48% {
-		margin: -164px 0px 0px -380.5px;
-	}
-
 	75% {
-		margin: -164px 0px 0px -36px;
+		margin-top: -4.10em;
+		margin-left: -0.758em;
+		transform: scale(0.7) rotate(-3600deg);
 	}
 
-	99.998%{
-		margin: -60px 0px 0px -36px;
+	80% {
+		margin-top: -4.10em;
+		margin-left: -0.758em;
+		transform: scale(0.7) rotate(360deg);
 	}
+
+
 
 	100% {
-		/* transform: rotate(360deg); */
-		/* transform: rotate(7560deg) ; */
-	}
+		margin-top: -1.32em;
+		margin-left: -0.758em;
+		transform: scale(1) rotate(720deg);
+	} 
+
 }
 
 
 
-
-
-
-
-
-
-
-
-
-.amazon {
-	background-color: var(--amazonachtergrond);
-	flex-grow: 1;
-	width: 100%;
-	height: 650px;
-	padding: 65px;
-	text-align: center;
-	display: grid;
-	font-family: amazonFont;
-	align-items: center;
-}
-
-.amazon h1 {
-	color: var(--am);
-}
-
-
-
-
-/* KEYFRAMES */
 

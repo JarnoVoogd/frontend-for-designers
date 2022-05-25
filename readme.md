@@ -43,7 +43,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
   
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/eindresultaat.png" width="375px" alt="uitomst opdracht 1">
+  <img src="opdracht1/images/eindresultaat.png" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 

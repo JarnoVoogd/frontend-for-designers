@@ -46,14 +46,16 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
   <img src="opdracht1/images/eindresultaat.png" width="375px" alt="uitomst opdracht 1">
 
 
-  ### Dit ging goed/Heb ik geleerd: 
+
+  ### Dit ging goed: 
   Wat ik heb geleerd, is het gebruik maken van een ::before en ::after atribute, hiermee heb ik de kroon van KLM gemaakt.
 
   Wat ik ook heb geleerd enkel met css animeren, keyframes gebruiken in mijn code
   en het gebruik van font-face voor fonts, deze drie dingen had ik nog niet eerder gedaan.
 
 
-  ### Dit was lastig/is niet gelukt:
+
+  ### Dit was lastig:
   Ik had het einde van mijn animatie wat vloeiender willen laten verlopen. Omdat de kroon bestaat uit drie losse onderdelen
   bleek het lastig om rotaties mooi uit te laten voeren. 
 

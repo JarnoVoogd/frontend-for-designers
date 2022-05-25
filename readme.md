@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -jouw naam-
+**Auteur:** -Jarno Voogf-
 
 **Het werk:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -9,9 +9,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 ## Bronnenlijst
-1. -bron 1-
-2. -bron 2-
-3. -...-
+1. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+2. [W3 Schools](https://www.w3schools.com/css/css3_animations.asp)
 
 
 

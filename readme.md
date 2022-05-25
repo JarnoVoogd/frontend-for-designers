@@ -37,28 +37,23 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 <details>
   <summary>Opdracht 1. 
-  Voor opdracht 1 heb ik een animatie gemaakt voor het merk 'Spitfire'. 
-  Dit is een merk die voornamelijk skateboard wielen verkoopt, 
-  en om deze reden is de animatie die ik ga maken het laten draaien van het logo (als een wiel).</summary>
-
+  Voor opdracht 1 heb ik een animatie gemaakt voor de Koninklijke Luchtvaart Maatschappij, KLM'. 
+  De KLM is natuurlijk een luchtvaart maatschappij, en ze hebben dus te maken met vliegen. Mijn idee
+  is om de kroon van het logo te laten vliegen.</summary>
+  
 
   ### Je uitkomst - karakteristiek screenshot(s):
   <img src="readme-images/eindresultaat.png" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Wat ik heb geleerd, is het gebruik maken van een ::after atribute, hiermee heb ik de cirkel gemaakt.
+  Wat ik heb geleerd, is het gebruik maken van een ::before en ::after atribute, hiermee heb ik de kroon van KLM gemaakt.
 
-  Wat ik ook heb geleerd is het animeren doormiddel van alleen CSS, het gebruik van keyframes en animations, 
-  en het gebruik van font-face voor fonts, dit had ik alle 3 nog nooit gedaan.
-
-  Ook heb ik nog nooit eerder gebruik gemaakt van CSS variabelen en de dark mode optie gebruikt voor andere styling.
-
-  <img src="readme-images/spitfirelight.png" width="375px" alt="dark/light mode">
+  Wat ik ook heb geleerd enkel met css animeren, keyframes gebruiken in mijn code
+  en het gebruik van font-face voor fonts, deze drie dingen had ik nog niet eerder gedaan.
 
 
-  ### Dit was lastig/Is niet gelukt:
-  Wat ik nog toe had willen voegen, dat helaas niet gelukt is, is dat ik de ::after, dus het 'wiel', wou laten
-  draaien om zo nog meer het draaiende wiel effect te geven.
-
+  ### Dit was lastig/is niet gelukt:
+  Ik had het einde van mijn animatie wat vloeiender willen laten verlopen. Omdat de kroon bestaat uit drie losse onderdelen
+  bleek het lastig om rotaties mooi uit te laten voeren. 
 </details>

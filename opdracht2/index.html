@@ -3,17 +3,50 @@
 	
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
+	<meta name="author" content="Jarno Voogd">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Opdracht 2: Interactie galore - Frontend voor Designers</title>
+	<title>Opdracht 2: Custom Nike by you</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body>
-	<h1>Opdracht 2</h1>
+	<header>
+        <div>
+            <a href="index.html"><img src="images/nikeLogo.svg" alt="Logo van Nike"/></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>Welkom! Customize een paar Air Force 1's zoals jij dat wilt!</h2>
+            <h3 id="schoennaam"></h3>
+        </div>
+
+
+        <div class="schoen">
+            <img id="schoenFoto" src="images/IMG-MainSchoen3.png" alt="Nike Schoen"/>
+            <img id="bovenZool"/>
+            <img id="onderZool"/>
+            <img id="bodyAchter"/>
+            <img id="bodyMidden"/>
+            <img id="schoenLogo"/>
+        </div>
+
+        <div class="knoppen">
+            <button id="bovenZoolButton">Boven zool</button>
+            <button id="onderZoolButton">Onder zool</button>
+            <button id="bodyAchterButton">Body achter</button>
+            <button id="bodyMiddenButton">Body midden</button>
+            <button id="logoButton">Logo</button>
+            <button id="resetButton">Reset</button>
+        </div>
+
+
+
+    </div>
 
 	<script src="scripts/script.js"></script>
 </body>

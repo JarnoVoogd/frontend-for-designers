@@ -1,6 +1,8 @@
 /* CSS Document */
 
+/*********/
 /* FONTS */
+/*********/
 @font-face {
 	font-family: 'eenfont';
 	src: url('../fonts/eenfont.woff2') format('woff2'),
@@ -11,17 +13,137 @@
 }
 
 
-/* ALGEMENE STYLING */
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
-body {
-  font-family:eenfont, sans-serif;
-  color:#111;
-  background-color:#eee;
+button, summary {
+	cursor: pointer;
 }
 
 
-/* BRAND STYLING */
 
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-text-white: #ffff;
+	--color--background-grey: #efefef;
+	--color-background-white: #f6f6f6;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+html {
+    max-height: 100vh;
+}
+
+body {
+  font-family:eenfont, sans-serif;
+  color:var(--color-text);
+  background-color:var(--color--background-grey);
+  max-height: 100vh;
+  
+}
+
+/* jouw code */
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    margin: auto;
+    text-align: center;
+}
+
+header div{
+    max-width: 100em;
+    max-height: 5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    border: 1px solid var(--color--background-grey);
+    border-bottom: none;
+}
+
+header img{
+    width: 150px;
+    height: auto;
+}
+
+.container{
+    max-width: 80em;
+    text-align: center;
+    margin: auto;
+    background-color: var(--color-background-white);
+    border: 1px solid var(--color--background-grey);
+}
+
+.content{
+    padding: 20px 0px;
+}
+
+.schoen{
+    margin: 0px 0px 20px 0px;
+}
+
+#schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #schoenLogo{
+    width: 35em;
+    height: auto;
+}
+
+#bovenZool, #schoenLogo, #bodyAchter, #bodyMidden, #onderZool{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.knoppen{
+    padding: 0px 0px 50px 0px;
+}
+
+.knoppen button, #maatButton{
+    background-color: var(--color-text);
+    color: var(--color-text-white);
+    font-size: 1rem;
+    border: 0px;
+    padding: 15px 25px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #schoenLogo{
+        width: 100%;
+        height: auto;
+    }
+
+    .knoppen{
+        display: grid;
+    }
+
+    .knoppen button{
+        margin: 10px 0px;
+    }
+}

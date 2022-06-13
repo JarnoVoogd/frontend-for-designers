@@ -1,36 +1,32 @@
+// ------------------------------------------------------------------------------------------------------
+// Neus
+// ------------------------------------------------------------------------------------------------------
 
-var bodyMiddenArray = ["images/BodyMidden/IMG-BodyMiddenWit.png", "images/BodyMidden/IMG-BodyMiddenCreme.png", "images/BodyMidden/IMG-BodyMiddenZwart.png", "images/BodyMidden/IMG-BodyMiddenGrijs.png"];
-var bodyMiddenFoto = document.querySelector("#bodyMidden");
-var huidigebodyMiddenFoto = 0;
+var neusArray = ["images/Neus/IMG-NeusWit.png", 
+                 "images/Neus/IMG-NeusCreme.png", 
+                 "images/Neus/IMG-NeusZwart.png", 
+                 "images/Neus/IMG-NeusGrijs.png", 
+                 "images/Neus/IMG-NeusBlauw.png",
+                 "images/Neus/IMG-NeusGeel.png",
+                 "images/Neus/IMG-NeusOranje.png",
+                 "images/Neus/IMG-NeusRood.png",
+                 "images/Neus/IMG-NeusGrijsSuede.png",
+                 "images/Neus/IMG-NeusZwartSuede.png",
+                 "images/Neus/IMG-NeusPaarsSuede.png"];
+var neusFoto = document.querySelector("#schoenNeus");
+var huidigeNeusFoto = 0;
 
-document.querySelector("#bodyMiddenButton").addEventListener("click", bodyMiddenVeranderen);
+document.querySelector("#NeusButton").addEventListener("click", neusVeranderen);
 
-function bodyMiddenVeranderen() {
+function neusVeranderen() {
 
-    huidigebodyMiddenFoto = huidigebodyMiddenFoto + 1;
+    huidigeNeusFoto = huidigeNeusFoto + 1;
 
-    if (huidigebodyMiddenFoto > 3) {
-        huidigebodyMiddenFoto = 0;
+    if (huidigeneusFoto > 10) {
+        huidigeNeusFoto = 0;
     } else {
         //niks
     }
-
     schoenCheck();
-    //het nummer van de array staat voor de titel van het bestand en dat wordt in html de src van de afbeelding
-    bodyMiddenFoto.setAttribute("src", bodyMiddenArray[huidigebodyMiddenFoto]);
+    neusFoto.setAttribute("src", neusArray[huidigeNeusFoto]);
 };
-
-
-
-
-"images/BodyMidden/IMG-BodyMiddenWit.png", 
-                       "images/BodyMidden/IMG-BodyMiddenCreme.png", 
-                       "images/BodyMidden/IMG-BodyMiddenZwart.png", 
-                       "images/BodyMidden/IMG-BodyMiddenGrijs.png", 
-                       "images/BodyMidden/IMG-BodyMiddenBlauw.png", 
-                       "images/BodyMidden/IMG-BodyMiddenGeel.png", 
-                       "images/BodyMidden/IMG-BodyMiddenOranje.png", 
-                       "images/BodyMidden/IMG-BodyMiddenRood.png", 
-                       "images/BodyMidden/IMG-BodyMiddenGrijsSuede.png", 
-                       "images/BodyMidden/IMG-BodyMiddenZwartSuede.png", 
-                       "images/BodyMidden/IMG-BodyMiddenPaarsSuede.png"

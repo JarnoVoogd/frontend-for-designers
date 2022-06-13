@@ -141,6 +141,43 @@ function bodyMiddenVeranderen() {
 
 
 // ------------------------------------------------------------------------------------------------------
+// Body voor
+// ------------------------------------------------------------------------------------------------------
+
+var bodyVoorArray = ["images/BodyVoor/IMG-BodyVoorWit.png", 
+                     "images/BodyVoor/IMG-BodyVoorCreme.png", 
+                     "images/BodyVoor/IMG-BodyVoorZwart.png", 
+                     "images/BodyVoor/IMG-BodyVoorGrijs.png", 
+                     "images/BodyVoor/IMG-BodyVoorBlauw.png", 
+                     "images/BodyVoor/IMG-BodyVoorGeel.png", 
+                     "images/BodyVoor/IMG-BodyVoorOranje.png", 
+                     "images/BodyVoor/IMG-BodyVoorRood.png", 
+                     "images/BodyVoor/IMG-BodyVoorGrijsSuede.png", 
+                     "images/BodyVoor/IMG-BodyVoorZwartSuede.png", 
+                     "images/BodyVoor/IMG-BodyVoorPaarsSuede.png"];
+
+var bodyVoorFoto = document.querySelector("#bodyVoor");
+var huidigeBodyVoorFoto = 0;
+
+document.querySelector("#bodyVoorButton").addEventListener("click", bodyVoorVeranderen);
+
+function bodyVoorVeranderen() {
+
+    huidigeBodyVoorFoto = huidigeBodyVoorFoto + 1;
+
+    if (huidigeBodyVoorFoto > 10) {
+        huidigeBodyVoorFoto = 0;
+    } else {
+        //niks
+    }
+
+    schoenCheck();
+    //het nummer van de array staat voor de titel van het bestand en dat wordt in html de src van de afbeelding
+    bodyVoorFoto.setAttribute("src", bodyVoorArray[huidigeBodyVoorFoto]);
+};
+
+
+// ------------------------------------------------------------------------------------------------------
 // Logo
 // ------------------------------------------------------------------------------------------------------
 
@@ -155,7 +192,7 @@ var logoArray = ["images/Logo/IMG-LogoWit.png",
                  "images/Logo/IMG-LogoGrijsSuede.png",
                  "images/Logo/IMG-LogoZwartSuede.png",
                  "images/Logo/IMG-LogoPaarsSuede.png"];
-var logoFoto = document.querySelector("#schoenLogo");
+var logoFoto = document.querySelector("#logo");
 var huidigeLogoFoto = 0;
 
 document.querySelector("#logoButton").addEventListener("click", logoVeranderen);
@@ -175,6 +212,40 @@ function logoVeranderen() {
 
 
 // ------------------------------------------------------------------------------------------------------
+// Neus
+// ------------------------------------------------------------------------------------------------------
+
+var neusArray = ["images/Neus/IMG-NeusWit.png", 
+                 "images/Neus/IMG-NeusCreme.png", 
+                 "images/Neus/IMG-NeusZwart.png", 
+                 "images/Neus/IMG-NeusGrijs.png", 
+                 "images/Neus/IMG-NeusBlauw.png",
+                 "images/Neus/IMG-NeusGeel.png",
+                 "images/Neus/IMG-NeusOranje.png",
+                 "images/Neus/IMG-NeusRood.png",
+                 "images/Neus/IMG-NeusGrijsSuede.png",
+                 "images/Neus/IMG-NeusZwartSuede.png",
+                 "images/Neus/IMG-NeusPaarsSuede.png"];
+var neusFoto = document.querySelector("#neus");
+var huidigeNeusFoto = 0;
+
+document.querySelector("#neusButton").addEventListener("click", neusVeranderen);
+
+function neusVeranderen() {
+
+    huidigeNeusFoto = huidigeNeusFoto + 1;
+
+    if (huidigeNeusFoto > 10) {
+        huidigeNeusFoto = 0;
+    } else {
+        //niks
+    }
+    schoenCheck();
+    neusFoto.setAttribute("src", neusArray[huidigeNeusFoto]);
+};
+
+
+// ------------------------------------------------------------------------------------------------------
 // Reset knop
 // ------------------------------------------------------------------------------------------------------
 
@@ -185,13 +256,17 @@ function resetSchoen() {
     huidigeOnderZoolFoto = 0;
     huidigeBodyAchterFoto = 0;      
     huidigeBodyMiddenFoto = 0;
+    huidigeBodyVoorFoto = 0;
     huidigeLogoFoto = 0;
+    huidigeNeusFoto = 0;
    
     bovenZoolFoto.setAttribute("src", bovenZoolArray[huidigeBovenZoolFoto]);
     onderZoolFoto.setAttribute("src", onderZoolArray[huidigeOnderZoolFoto]);
     bodyAchterFoto.setAttribute("src", bodyAchterArray[huidigeBodyAchterFoto]);
     bodyMiddenFoto.setAttribute("src", bodyMiddenArray[huidigeBodyMiddenFoto]);
+    bodyVoorFoto.setAttribute("src", bodyVoorArray[huidigeBodyVoorFoto])
     logoFoto.setAttribute("src", logoArray[huidigeLogoFoto]);
+    neusFoto.setAttribute("src", neusArray[huidigeNeusFoto]);
 }
 
 
@@ -202,7 +277,7 @@ function resetSchoen() {
 function schoenCheck() {
 
 
-    if (huidigeBovenZoolFoto == 4 && huidigeLogoFoto == 3){
+    if (huidigeBovenZoolFoto == 3 && huidigeLogoFoto == 3){
     document.querySelector("#schoennaam").innerHTML = "Dit is de Travis Scott Jordan!";
     console.log("test");
     } else{ 

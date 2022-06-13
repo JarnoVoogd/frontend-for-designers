@@ -105,8 +105,9 @@ header img{
 }
 
 #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-    width: 35em;
+    width: 24em;
     height: auto;
+    
 }
 
 #bovenZool, #logo, #bodyAchter, #bodyMidden, #bodyVoor, #onderZool, #neus{
@@ -119,6 +120,7 @@ header img{
 
 .knoppen{
     padding: 0px 0px 50px 0px;
+    display: grid;
 }
 
 .knoppen button, #maatButton{
@@ -133,7 +135,7 @@ header img{
 
 
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
         width: 100%;
         height: auto;
@@ -146,4 +148,4 @@ header img{
     .knoppen button{
         margin: 10px 0px;
     }
-}
+} */

@@ -3,16 +3,16 @@
 // ------------------------------------------------------------------------------------------------------
 
 // array met 4 bovenzool afbeeldingen
-var bovenZoolArray = ["images/ZoolBoven/IMG-ZoolBovenWit.png",
+const bovenZoolArray = ["images/ZoolBoven/IMG-ZoolBovenWit.png",
                       "images/ZoolBoven/IMG-ZoolBovenCreme.png", 
                       "images/ZoolBoven/IMG-ZoolBovenZwart.png", 
                       "images/ZoolBoven/IMG-ZoolBovenGrijs.png"];
 
 // dit is de bovenzoolfoto in de html
-var bovenZoolFoto = document.querySelector("#bovenZool");
+let bovenZoolFoto = document.querySelector("#bovenZool");
 
 // dit is de huidige index van de array
-var huidigeBovenZoolFoto = 0;
+let huidigeBovenZoolFoto = 0;
 
 // als je op de knop klikt wordt de functie "bovenZoolVeranderen" geactiveerd
 document.querySelector("#bovenZoolButton").addEventListener("click", bovenZoolVeranderen);
@@ -39,14 +39,14 @@ function bovenZoolVeranderen() {
 // Onder zool
 // ------------------------------------------------------------------------------------------------------
 
-var onderZoolArray = ["images/ZoolOnder/IMG-ZoolOnderWit.png", 
+const onderZoolArray = ["images/ZoolOnder/IMG-ZoolOnderWit.png", 
                       "images/ZoolOnder/IMG-ZoolOnderCreme.png", 
                       "images/ZoolOnder/IMG-ZoolOnderZwart.png", 
                       "images/ZoolOnder/IMG-ZoolOnderGrijs.png", 
                       "images/ZoolOnder/IMG-ZoolOnderGrijs.png"];
 
-var onderZoolFoto = document.querySelector("#onderZool");
-var huidigeOnderZoolFoto = 0;
+let onderZoolFoto = document.querySelector("#onderZool");
+let huidigeOnderZoolFoto = 0;
 
 document.querySelector("#onderZoolButton").addEventListener("click", onderZoolVeranderen);
 
@@ -70,7 +70,7 @@ function onderZoolVeranderen() {
 // Body achter
 // ------------------------------------------------------------------------------------------------------
 
-var bodyAchterArray = ["images/BodyAchter/IMG-BodyAchterWit.png", 
+const bodyAchterArray = ["images/BodyAchter/IMG-BodyAchterWit.png", 
                        "images/BodyAchter/IMG-BodyAchterCreme.png", 
                        "images/BodyAchter/IMG-BodyAchterZwart.png", 
                        "images/BodyAchter/IMG-BodyAchterGrijs.png", 
@@ -82,8 +82,8 @@ var bodyAchterArray = ["images/BodyAchter/IMG-BodyAchterWit.png",
                        "images/BodyAchter/IMG-BodyAchterZwartSuede.png", 
                        "images/BodyAchter/IMG-BodyAchterPaarsSuede.png"];
 
-var bodyAchterFoto = document.querySelector("#bodyAchter");
-var huidigeBodyAchterFoto = 0;
+let bodyAchterFoto = document.querySelector("#bodyAchter");
+let huidigeBodyAchterFoto = 0;
 
 document.querySelector("#bodyAchterButton").addEventListener("click", bodyAchterVeranderen);
 
@@ -107,7 +107,7 @@ function bodyAchterVeranderen() {
 // Body midden
 // ------------------------------------------------------------------------------------------------------
 
-var bodyMiddenArray = ["images/BodyMidden/IMG-BodyMiddenWit.png", 
+const bodyMiddenArray = ["images/BodyMidden/IMG-BodyMiddenWit.png", 
                        "images/BodyMidden/IMG-BodyMiddenCreme.png", 
                        "images/BodyMidden/IMG-BodyMiddenZwart.png", 
                        "images/BodyMidden/IMG-BodyMiddenGrijs.png", 
@@ -119,8 +119,8 @@ var bodyMiddenArray = ["images/BodyMidden/IMG-BodyMiddenWit.png",
                        "images/BodyMidden/IMG-BodyMiddenZwartSuede.png", 
                        "images/BodyMidden/IMG-BodyMiddenPaarsSuede.png"];
 
-var bodyMiddenFoto = document.querySelector("#bodyMidden");
-var huidigeBodyMiddenFoto = 0;
+let bodyMiddenFoto = document.querySelector("#bodyMidden");
+let huidigeBodyMiddenFoto = 0;
 
 document.querySelector("#bodyMiddenButton").addEventListener("click", bodyMiddenVeranderen);
 
@@ -144,7 +144,7 @@ function bodyMiddenVeranderen() {
 // Body voor
 // ------------------------------------------------------------------------------------------------------
 
-var bodyVoorArray = ["images/BodyVoor/IMG-BodyVoorWit.png", 
+const bodyVoorArray = ["images/BodyVoor/IMG-BodyVoorWit.png", 
                      "images/BodyVoor/IMG-BodyVoorCreme.png", 
                      "images/BodyVoor/IMG-BodyVoorZwart.png", 
                      "images/BodyVoor/IMG-BodyVoorGrijs.png", 
@@ -156,8 +156,8 @@ var bodyVoorArray = ["images/BodyVoor/IMG-BodyVoorWit.png",
                      "images/BodyVoor/IMG-BodyVoorZwartSuede.png", 
                      "images/BodyVoor/IMG-BodyVoorPaarsSuede.png"];
 
-var bodyVoorFoto = document.querySelector("#bodyVoor");
-var huidigeBodyVoorFoto = 0;
+let bodyVoorFoto = document.querySelector("#bodyVoor");
+let huidigeBodyVoorFoto = 0;
 
 document.querySelector("#bodyVoorButton").addEventListener("click", bodyVoorVeranderen);
 
@@ -181,7 +181,7 @@ function bodyVoorVeranderen() {
 // Logo
 // ------------------------------------------------------------------------------------------------------
 
-var logoArray = ["images/Logo/IMG-LogoWit.png", 
+const logoArray = ["images/Logo/IMG-LogoWit.png", 
                  "images/Logo/IMG-LogoCreme.png", 
                  "images/Logo/IMG-LogoZwart.png", 
                  "images/Logo/IMG-LogoGrijs.png", 
@@ -192,8 +192,8 @@ var logoArray = ["images/Logo/IMG-LogoWit.png",
                  "images/Logo/IMG-LogoGrijsSuede.png",
                  "images/Logo/IMG-LogoZwartSuede.png",
                  "images/Logo/IMG-LogoPaarsSuede.png"];
-var logoFoto = document.querySelector("#logo");
-var huidigeLogoFoto = 0;
+let logoFoto = document.querySelector("#logo");
+let huidigeLogoFoto = 0;
 
 document.querySelector("#logoButton").addEventListener("click", logoVeranderen);
 
@@ -215,7 +215,7 @@ function logoVeranderen() {
 // Neus
 // ------------------------------------------------------------------------------------------------------
 
-var neusArray = ["images/Neus/IMG-NeusWit.png", 
+const neusArray = ["images/Neus/IMG-NeusWit.png", 
                  "images/Neus/IMG-NeusCreme.png", 
                  "images/Neus/IMG-NeusZwart.png", 
                  "images/Neus/IMG-NeusGrijs.png", 
@@ -226,8 +226,8 @@ var neusArray = ["images/Neus/IMG-NeusWit.png",
                  "images/Neus/IMG-NeusGrijsSuede.png",
                  "images/Neus/IMG-NeusZwartSuede.png",
                  "images/Neus/IMG-NeusPaarsSuede.png"];
-var neusFoto = document.querySelector("#neus");
-var huidigeNeusFoto = 0;
+let neusFoto = document.querySelector("#neus");
+let huidigeNeusFoto = 0;
 
 document.querySelector("#neusButton").addEventListener("click", neusVeranderen);
 
@@ -269,6 +269,47 @@ function resetSchoen() {
     neusFoto.setAttribute("src", neusArray[huidigeNeusFoto]);
 }
 
+
+// ------------------------------------------------------------------------------------------------------
+// Opslaan creatie en reproductie ervan
+// ------------------------------------------------------------------------------------------------------
+
+let geselecteerdeBovenZool;
+let geselecteerdeOnderZool;
+let geselecteerdeBodyAchter;
+let geselecteerdeBodyMidden;
+let geselecteerdeBodyVoor;
+let geselecteerdeLogo;
+let geselecteerdeNeus;
+
+document.querySelector("#save").addEventListener("click", opslaan)
+
+function opslaan() {
+    geselecteerdeBovenZool = bovenZoolArray[huidigeBovenZoolFoto];
+    geselecteerdeOnderZool = onderZoolArray[huidigeOnderZoolFoto];
+    geselecteerdeBodyAchter = bodyAchterArray[huidigeBodyAchterFoto];
+    geselecteerdeBodyMidden = bodyMiddenArray[huidigeBodyMiddenFoto];
+    geselecteerdeBodyVoor = bodyVoorArray[huidigeBodyVoorFoto];
+    geselecteerdeLogo = logoArray[huidigeLogoFoto];
+    geselecteerdeNeus = neusArray[huidigeNeusFoto];
+
+
+    console.log(geselecteerdeBovenZool, geselecteerdeOnderZool)
+}
+
+document.querySelector("#creatie").addEventListener("click", creatie)
+
+function creatie() {
+    bovenZoolFoto.setAttribute("src", geselecteerdeBovenZool);
+    onderZoolFoto.setAttribute("src", geselecteerdeOnderZool);
+    bodyAchterFoto.setAttribute("src", geselecteerdeBodyAchter);
+    bodyMiddenFoto.setAttribute("src", geselecteerdeBodyMidden);
+    bodyVoorFoto.setAttribute("src", geselecteerdeBodyVoor);
+    logoFoto.setAttribute("src", geselecteerdeLogo);
+    neusFoto.setAttribute("src", geselecteerdeNeus);
+
+
+}
 
 
 

@@ -97,15 +97,21 @@ header img{
     margin: auto;
     background-color: var(--color-background-white);
     border: 0.1em solid var(--color--background-grey);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.4fr;
 }
 
 .content{
     padding: 0.6em 0em 0.6em 0em;
     font-size: var(--grote--text);
+    grid-area: header;
 }
 
 .schoen{
     margin: 0em 0em 0.6em 0em;
+    grid-area: schoen;
+    position: relative;
 }
 
 #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
@@ -124,10 +130,12 @@ header img{
 
 .knoppen{
     width: 100%;
+    height: auto;
     padding: 0px 0px 50px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-area: knoppen;
 }
 
 .knoppen button{
@@ -167,18 +175,12 @@ header img{
         }
 
         .knoppen {
-            padding: 0px 0px 50px 0px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            
         }
         
 
         .knoppen button{
-            font-size: 0.9rem;
-            padding: 0.7em 0.5em;
-            margin: 0.5em 1em;
-            min-width: 3em;
+         
         
         }
     }
@@ -193,18 +195,51 @@ header img{
         }
 
         .knoppen {
-            padding: 0px 0px 50px 0px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            
         }
         
 
         .knoppen button{
-            font-size: 0.9rem;
-            padding: 0.7em 0.5em;
-            margin: 0.5em 1em;
-            min-width: 3em;
+            
         
         }
+    }
+
+
+    @media only screen 
+    and (min-width: 600px) {
+        #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+            width: 24em;
+            margin: auto;
+            height: auto;
+        }
+
+        .knoppen {
+            padding: 3em 0;
+            
+        }
+        
+
+        .knoppen button{
+            
+        
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header header"
+            "schoen knoppen"
+            ;
+            height: 60em;
+            max-width: 100em;
+        }
+
+        .schoen {
+            margin: 0;
+        }
+        
+       
+                               
     }

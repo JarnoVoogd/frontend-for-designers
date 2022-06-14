@@ -1,32 +1,50 @@
-// ------------------------------------------------------------------------------------------------------
-// Neus
-// ------------------------------------------------------------------------------------------------------
+const bovenZoolArray = ["images/ZoolBoven/IMG-ZoolBovenWit.png",
+                      "images/ZoolBoven/IMG-ZoolBovenCreme.png", 
+                      "images/ZoolBoven/IMG-ZoolBovenZwart.png", 
+                      "images/ZoolBoven/IMG-ZoolBovenGrijs.png"];
 
-var neusArray = ["images/Neus/IMG-NeusWit.png", 
-                 "images/Neus/IMG-NeusCreme.png", 
-                 "images/Neus/IMG-NeusZwart.png", 
-                 "images/Neus/IMG-NeusGrijs.png", 
-                 "images/Neus/IMG-NeusBlauw.png",
-                 "images/Neus/IMG-NeusGeel.png",
-                 "images/Neus/IMG-NeusOranje.png",
-                 "images/Neus/IMG-NeusRood.png",
-                 "images/Neus/IMG-NeusGrijsSuede.png",
-                 "images/Neus/IMG-NeusZwartSuede.png",
-                 "images/Neus/IMG-NeusPaarsSuede.png"];
-var neusFoto = document.querySelector("#schoenNeus");
-var huidigeNeusFoto = 0;
+// dit is de bovenzoolfoto in de html
+let bovenZoolFoto = document.querySelector("#bovenZool");
 
-document.querySelector("#NeusButton").addEventListener("click", neusVeranderen);
+// dit is de huidige index van de array
+let huidigeBovenZoolFoto = 0;
 
-function neusVeranderen() {
+// als je op de knop klikt wordt de functie "bovenZoolVeranderen" geactiveerd
+document.querySelector("#bovenZoolButton").addEventListener("click", veranderen(huidigeBovenZoolFoto,bovenZoolFoto,bovenZoolArray));
 
-    huidigeNeusFoto = huidigeNeusFoto + 1;
 
-    if (huidigeneusFoto > 10) {
-        huidigeNeusFoto = 0;
+
+
+function veranderen(huidigeFoto,foto,array) {
+
+    //huidigeBovenZoolFoto is 0, plus 1 bij elke klik
+    huidigeFoto = huidigeFoto + 1;
+
+    //als de foto groter is dan 4 gaat het terug naar 0 bij de array
+    if (huidigeFoto > 3) {
+        huidigeFoto = 0;
     } else {
         //niks
     }
+
+    //het nummer van de array staat voor de titel van het bestand en dat wordt in html de src van de afbeelding
+    foto.setAttribute("src", array[huidigeFoto]);
+};
+
+
+function bovenZoolVeranderen() {
+
+    //huidigeBovenZoolFoto is 0, plus 1 bij elke klik
+    huidigeBovenZoolFoto = huidigeBovenZoolFoto + 1;
+
+    //als de foto groter is dan 4 gaat het terug naar 0 bij de array
+    if (huidigeBovenZoolFoto > 3) {
+        huidigeBovenZoolFoto = 0;
+    } else {
+        //niks
+    }
+
     schoenCheck();
-    neusFoto.setAttribute("src", neusArray[huidigeNeusFoto]);
+    //het nummer van de array staat voor de titel van het bestand en dat wordt in html de src van de afbeelding
+    bovenZoolFoto.setAttribute("src", bovenZoolArray[huidigeBovenZoolFoto]);
 };

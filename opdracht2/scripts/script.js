@@ -282,16 +282,38 @@ let geselecteerdeBodyVoor;
 let geselecteerdeLogo;
 let geselecteerdeNeus;
 
+
+let voorbeeldObject = { bovenZool : bovenZoolArray[0],
+                        onderZool : onderZoolArray[0],
+                        bodyAchter : bodyAchterArray[0],
+                        bodyMidden : bodyMiddenArray[0],
+                        bodyVoor : bodyVoorArray[0],
+                        logo : logoArray[0],
+                        neus : neusArray[0]};
+let opslaanArray = [voorbeeldObject];
+let schoen1 ={}
+
 document.querySelector("#save").addEventListener("click", opslaan)
 
 function opslaan() {
-    geselecteerdeBovenZool = window.localStorage.setItem("geselecteerdeBovenZool", bovenZoolArray[huidigeBovenZoolFoto]);
-    geselecteerdeOnderZool = window.localStorage.setItem("geselecteerdeOnderZool", onderZoolArray[huidigeOnderZoolFoto]);
-    geselecteerdeBodyAchter = window.localStorage.setItem("geselecteerdeBodyAchter", bodyAchterArray[huidigeBodyAchterFoto]);
-    geselecteerdeBodyMidden = window.localStorage.setItem("geselecteerdeBodyMidden", bodyMiddenArray[huidigeBodyMiddenFoto]);
-    geselecteerdeBodyVoor = window.localStorage.setItem("geselecteerdeBodyVoor", bodyVoorArray[huidigeBodyVoorFoto]);
-    geselecteerdeLogo = window.localStorage.setItem("geselecteerdeLogo", logoArray[huidigeLogoFoto]);
-    geselecteerdeNeus =  window.localStorage.setItem("geselecteerdeNeus", neusArray[huidigeNeusFoto]);
+    schoen1 = { bovenZool : bovenZoolArray[huidigeBovenZoolFoto],
+            onderZool : onderZoolArray[huidigeOnderZoolFoto],
+            bodyAchter : bodyAchterArray[huidigeBodyAchterFoto],
+            bodyMidden : bodyMiddenArray[huidigeBodyMiddenFoto],
+            bodyVoor : bodyVoorArray[huidigeBodyVoorFoto],
+            logo : logoArray[huidigeLogoFoto],
+            neus : neusArray[huidigeNeusFoto]}
+
+    window.localStorage.setItem("schoen1", JSON.stringify(schoen1))
+
+
+    // geselecteerdeBovenZool = window.localStorage.setItem("geselecteerdeBovenZool", bovenZoolArray[huidigeBovenZoolFoto]);
+    // geselecteerdeOnderZool = window.localStorage.setItem("geselecteerdeOnderZool", onderZoolArray[huidigeOnderZoolFoto]);
+    // geselecteerdeBodyAchter = window.localStorage.setItem("geselecteerdeBodyAchter", bodyAchterArray[huidigeBodyAchterFoto]);
+    // geselecteerdeBodyMidden = window.localStorage.setItem("geselecteerdeBodyMidden", bodyMiddenArray[huidigeBodyMiddenFoto]);
+    // geselecteerdeBodyVoor = window.localStorage.setItem("geselecteerdeBodyVoor", bodyVoorArray[huidigeBodyVoorFoto]);
+    // geselecteerdeLogo = window.localStorage.setItem("geselecteerdeLogo", logoArray[huidigeLogoFoto]);
+    // geselecteerdeNeus =  window.localStorage.setItem("geselecteerdeNeus", neusArray[huidigeNeusFoto]);
 
     document.querySelector("#melding").innerHTML = "Uw creatie is opgeslagen!";
 
@@ -305,13 +327,14 @@ function opslaan() {
 document.querySelector("#creatie").addEventListener("click", creatie)
 
 function creatie() {
-    bovenZoolFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeBovenZool"));
-    onderZoolFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeOnderZool"));
-    bodyAchterFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeBodyAchter"));
-    bodyMiddenFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeBodyMidden"));
-    bodyVoorFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeBodyVoor"));
-    logoFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeLogo"));
-    neusFoto.setAttribute("src", window.localStorage.getItem("geselecteerdeNeus"));
+    let schoen1 = JSON.parse(window.localStorage.getItem("schoen1"));
+    bovenZoolFoto.setAttribute("src", schoen1.bovenZool);
+    onderZoolFoto.setAttribute("src", schoen1.onderZool);
+    bodyAchterFoto.setAttribute("src", schoen1.bodyAchter);
+    bodyMiddenFoto.setAttribute("src", schoen1.bodyMidden);
+    bodyVoorFoto.setAttribute("src", schoen1.bodyVoor);
+    logoFoto.setAttribute("src", schoen1.logo);
+    neusFoto.setAttribute("src", schoen1.neus);
 
     document.querySelector("#melding").innerHTML = "Hier is uw creatie!";
 

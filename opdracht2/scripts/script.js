@@ -274,37 +274,79 @@ function resetSchoen() {
 // Opslaan creatie en reproductie ervan
 // ------------------------------------------------------------------------------------------------------
 
-let geselecteerdeBovenZool;
-let geselecteerdeOnderZool;
-let geselecteerdeBodyAchter;
-let geselecteerdeBodyMidden;
-let geselecteerdeBodyVoor;
-let geselecteerdeLogo;
-let geselecteerdeNeus;
+// let geselecteerdeBovenZool;
+// let geselecteerdeOnderZool;
+// let geselecteerdeBodyAchter;
+// let geselecteerdeBodyMidden;
+// let geselecteerdeBodyVoor;
+// let geselecteerdeLogo;
+// let geselecteerdeNeus;
+let input;
 
 
-let voorbeeldObject = { bovenZool : bovenZoolArray[0],
-                        onderZool : onderZoolArray[0],
-                        bodyAchter : bodyAchterArray[0],
-                        bodyMidden : bodyMiddenArray[0],
-                        bodyVoor : bodyVoorArray[0],
-                        logo : logoArray[0],
-                        neus : neusArray[0]};
-let opslaanArray = [voorbeeldObject];
-let schoen1 ={}
+// let voorbeeldObject = { 
+//     naam: "schoenNaam",               
+//     bovenZool : bovenZoolArray[0],
+//     onderZool : onderZoolArray[0],
+//     bodyAchter : bodyAchterArray[0],
+//     bodyMidden : bodyMiddenArray[0],
+//     bodyVoor : bodyVoorArray[0],
+//     logo : logoArray[0],
+//     neus : neusArray[0]
+// };
+
+function schoenObject(naam, bovenZool, onderZool) { 
+    this.naam = naam;
+    this.bovenZool = bovenZool;
+    this.onderZool = onderZool;
+    this.bodyAchter = bodyAchter;
+    this.bodyMidden = bodyMidden;
+    this.bodyVoor = bodyVoor;
+    this.logo = logo; 
+    this.neus = neus;
+};
+let opslaanArray = [];
+// let schoen1 ={}
 
 document.querySelector("#save").addEventListener("click", opslaan)
 
-function opslaan() {
-    schoen1 = { bovenZool : bovenZoolArray[huidigeBovenZoolFoto],
-            onderZool : onderZoolArray[huidigeOnderZoolFoto],
-            bodyAchter : bodyAchterArray[huidigeBodyAchterFoto],
-            bodyMidden : bodyMiddenArray[huidigeBodyMiddenFoto],
-            bodyVoor : bodyVoorArray[huidigeBodyVoorFoto],
-            logo : logoArray[huidigeLogoFoto],
-            neus : neusArray[huidigeNeusFoto]}
 
-    window.localStorage.setItem("schoen1", JSON.stringify(schoen1))
+function opslaan() {
+    input = document.getElementById("naamInput").value
+    
+    if (input.length < 1) {
+        document.querySelector("#melding").innerHTML = "Geef uw creatie een naam";
+
+        setTimeout(() => {
+            document.querySelector("#melding").innerHTML = "";
+        },3000);
+    
+
+    } else {
+        var nieuweSchoen = 
+            new schoenObject(
+                input, 
+                bovenZoolArray[huidigeBovenZoolFoto],
+                onderZoolArray[huidigeOnderZoolFoto],
+                bodyAchterArray[huidigeBodyAchterFoto],
+                bodyMiddenArray[huidigeBodyMiddenFoto],
+                bodyVoorArray[huidigeBodyVoorFoto],
+                logoArray[huidigeLogoFoto],
+                neusArray[huidigeNeusFoto])
+
+        opslaanArray.push(nieuweSchoen);
+        console.log(opslaanArray);
+        // schoen1 = { naam : input,
+        //             bovenZool : bovenZoolArray[huidigeBovenZoolFoto],
+        //             onderZool : onderZoolArray[huidigeOnderZoolFoto],
+        //             bodyAchter : bodyAchterArray[huidigeBodyAchterFoto],
+        //             bodyMidden : bodyMiddenArray[huidigeBodyMiddenFoto],
+        //             bodyVoor : bodyVoorArray[huidigeBodyVoorFoto],
+        //             logo : logoArray[huidigeLogoFoto],
+        //             neus : neusArray[huidigeNeusFoto]}
+            
+
+    window.localStorage.setItem("array", JSON.stringify(opslaanArray))
 
 
     // geselecteerdeBovenZool = window.localStorage.setItem("geselecteerdeBovenZool", bovenZoolArray[huidigeBovenZoolFoto]);
@@ -320,9 +362,10 @@ function opslaan() {
     setTimeout(() => {
         document.querySelector("#melding").innerHTML = "";
     },3000);
-    
+        
+   
+    }
 }
-
 
 document.querySelector("#creatie").addEventListener("click", creatie)
 

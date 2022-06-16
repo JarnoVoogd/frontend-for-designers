@@ -282,6 +282,17 @@ let geselecteerdeBodyVoor;
 let geselecteerdeLogo;
 let geselecteerdeNeus;
 
+let voorbeeldObject = { 
+    naam: "schoenNaam",               
+    bovenZool : bovenZoolArray[0],
+    onderZool : onderZoolArray[0],
+    bodyAchter : bodyAchterArray[0],
+    bodyMidden : bodyMiddenArray[0],
+    bodyVoor : bodyVoorArray[0],
+    logo : logoArray[0],
+    neus : neusArray[0]
+};
+
 document.querySelector("#save").addEventListener("click", opslaan)
 
 function opslaan() {

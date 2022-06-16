@@ -342,17 +342,17 @@ let updateCreaties = () => {
 }
 
 
-
+// hoe doe ik dit?
 // functie die de creaties terug kan halen
-let creatie = () => {
+let creatie = (i) => {
    updateCreaties()
-    // bovenZoolFoto.setAttribute("src", schoen1.bovenZool);
-    // onderZoolFoto.setAttribute("src", schoen1.onderZool);
-    // bodyAchterFoto.setAttribute("src", schoen1.bodyAchter);
-    // bodyMiddenFoto.setAttribute("src", schoen1.bodyMidden);
-    // bodyVoorFoto.setAttribute("src", schoen1.bodyVoor);
-    // logoFoto.setAttribute("src", schoen1.logo);
-    // neusFoto.setAttribute("src", schoen1.neus);
+    bovenZoolFoto.setAttribute("src", opslaanArrayOphalen[i].bovenZool);
+    onderZoolFoto.setAttribute("src", opslaanArrayOphalen[i].onderZool);
+    bodyAchterFoto.setAttribute("src", opslaanArrayOphalen[i].bodyAchter);
+    bodyMiddenFoto.setAttribute("src", opslaanArrayOphalen[0].bodyMidden);
+    bodyVoorFoto.setAttribute("src", opslaanArrayOphalen[0].bodyVoor);
+    logoFoto.setAttribute("src", opslaanArrayOphalen[0].logo);
+    neusFoto.setAttribute("src", opslaanArrayOphalen[0].neus);
 
     document.querySelector("#melding").innerHTML = "Hier is uw creatie!";
 
@@ -361,7 +361,7 @@ let creatie = () => {
     },3000);
 
 }
-document.querySelector("#creatie").addEventListener("click", creatie)
+document.querySelector("#creatie").addEventListener("click", creatie(0))
 
 
 

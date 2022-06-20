@@ -108,35 +108,25 @@ header img{
     grid-area: header;
 }
 
-.schoen {
-    margin: 0 0 0.6em 0;
+.schoen{
+    margin: 0em 0em 0.6em 0em;
     grid-area: schoen;
     position: relative;
 }
 
-.schoen img {
-    display: block;
+#schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
     width: 22em;
     height: auto;
+    
 }
 
-.schoen img:not(:first-of-type) {
+#bovenZool, #logo, #bodyAchter, #bodyMidden, #bodyVoor, #onderZool, #neus{
     position: absolute;
-    top:0;
+    margin: auto auto 0.6em auto;
     left: 50%;
     transform: translateX(-50%);
+    
 }
-
-/* kleine schoentjes */
-#deLijst .schoen {
-    margin: 0;
-}
-
-#deLijst .schoen img {
-    width:6em;
-}
-
-/* knoppen */
 
 .knoppen {
     width: 100%;
@@ -264,51 +254,3 @@ header img{
        
                                
     }
-
-
-
-
-
-
-/************/
-/* DE LIJST */
-/************/
-
-#deLijst {
-    margin:0 auto;
-    padding:0;
-    list-style: none;
-    display: flex;
-    gap:.5em;
-    justify-content: center;
-    flex-wrap:wrap;
-}
-
-#deLijst li {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr min-content;
-    gap:.1em;
-}
-
-#deLijst h4 {
-    margin:0;
-    font-size: 1em;
-    font-weight: 400;
-    text-align: left;
-}
-
-/* de toon/schoen button */
-#deLijst button:first-of-type {
-    padding:0;
-    grid-column: 1/-1;
-    justify-self: center;
-}
-
-/* de verwijder button */
-#deLijst button:last-of-type {
-    grid-column-end: -1;
-    grid-row-start:1;
-    justify-self: end;
-    border:none;
-}

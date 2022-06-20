@@ -270,7 +270,7 @@ function creatieTonen() {
     setHuidigeCreatie();
 
     // feedback richting gebruiker tonen 
-    meldingTonen(`Hier is uw ${huidigeCreatie.naam}`);
+    meldingTonen(`Hier is ${huidigeCreatie.naam} 's schoen`);
 }
 
 
@@ -285,7 +285,7 @@ function creatieVerwijderen() {
     let teVerwijderenCreatie = lijstMetCreaties[creatieIndexInArray];
 
     // feedback richting gebruiker tonen 
-    meldingTonen(`Uw ${teVerwijderenCreatie.naam} is verwijderd`);
+    meldingTonen(`${teVerwijderenCreatie.naam}'s schoen is verwijderd`);
 
     // de creatie uit de array verwijderen
     lijstMetCreaties.splice(this.dataset.index, 1);
@@ -320,7 +320,17 @@ let updateCreaties = () => {
     for (let i = 0; i < lijstMetCreaties.length; i++) {
         let creatieHtml = 
         `<li>
-            <button data-index="${i}" aria-label="toon ${lijstMetCreaties[i].naam}">${lijstMetCreaties[i].naam}</button>
+            <h4>${lijstMetCreaties[i].naam}</h4>
+            <button data-index="${i}" aria-label="toon ${lijstMetCreaties[i].naam}" class="schoen">
+                <img src="images/IMG-MainSchoen2.png" alt="Nike Schoen wit"/>
+                <img src="${creatieOpties.bovenZool[lijstMetCreaties[i].bovenZool]}" alt="Boven zool wit"/>
+                <img src="${creatieOpties.onderZool[lijstMetCreaties[i].onderZool]}" alt="Onder zool wit"/>
+                <img src="${creatieOpties.bodyAchter[lijstMetCreaties[i].bodyAchter]}" alt="Body achter wit"/>
+                <img src="${creatieOpties.bovenZool[lijstMetCreaties[i].bovenZool]}" alt="Body midden wit"/>
+                <img src="${creatieOpties.bodyMidden[lijstMetCreaties[i].bodyMidden]}" alt="Body voor wit"/>
+                <img src="${creatieOpties.logo[lijstMetCreaties[i].logo]}" alt="Logo wit"/>
+                <img src="${creatieOpties.neus[lijstMetCreaties[i].neus]}" alt="Neus wit"/>
+            </button>
             <button data-index="${i}" aria-label="verwijder ${lijstMetCreaties[i].naam}">x</button>
         <li>`;
 

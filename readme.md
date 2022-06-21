@@ -103,12 +103,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na testen (week 7)</summary>
 
-  Neem minimaal 5 bevindingen op:
+  - De pagina is nog niet responsive
+  - Ik heb nog niet twee User Interface events gebruikt
+  - De pagina heeft nog geen darkmode
+  - De gebruiker kan maar één schoen opslaan
+  - De gebruiker kan geen naam geven aan de creatie
 
 
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De pagina is nog niet volledig responsive van groot naar klein scherm.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
@@ -116,7 +120,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Ik heb nog niet gebruik gemaakt van twee User Interface events.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
@@ -124,7 +128,26 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Bevinding 3:
-  ...
+  De pagina heeft nog geen dark mode voor gebruikers die hier gebruik van willen maken.
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+
+
+  ### Bevinding 4:
+  De gebruiker kan maar één schoen opslaan en terughalen.
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+
+
+  ### Bevinding 5:
+  De gebruiker kan geen naam geven aan zijn/haar creatie.
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 </details>
 
 

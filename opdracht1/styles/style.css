@@ -97,7 +97,7 @@ span:last-child:before {
 	content: '+';
 	position: absolute;
 	color: var(--klmblauw);
-	margin-left: -0.758em;
+	margin-left: -0.65em;
 	margin-top: -1.32em;
     font-size: 0.43em;
     height: 0.77em;
@@ -140,7 +140,7 @@ h1 span:first-child{
 span:first-child:before{
 	content: '';
 	position: absolute;
-	margin-left: 0.675em;
+	margin-left: 0.8em;
 	margin-top: 0em;
 	color: var(--klmblauw);
 	display: inline-block;

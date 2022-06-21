@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -jouw naam-
+**Auteur:** -Jarno Voogd-
 
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -14,8 +14,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
-  1. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
-  2. [W3 Schools](https://www.w3schools.com/css/css3_animations.asp)
+  1. [Mozilla before/after](https://developer.mozilla.org/en-US/docs/Web/CSS/::before)
+  2. [W3 Schools animations](https://www.w3schools.com/css/css3_animations.asp)
+  2. [Css tricks before/after](https://css-tricks.com/almanac/selectors/a/after-and-before/)
+
   
 
 
@@ -55,18 +57,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Dit ging goed/Heb ik geleerd: 
   Wat ik heb geleerd, is het gebruik maken van een ::before en ::after atribute, hiermee heb ik de kroon van KLM gemaakt.
+  Ik heb de kroon in drie delen opgedeeld; het balkje, de bolletjes en het kruisje. Deze drie onderdelen heb ik allemaal met 
+  before en/of after gemaakt.
 
   Wat ik ook heb geleerd enkel met css animeren, keyframes gebruiken in mijn code
   en het gebruik van font-face voor fonts, deze drie dingen had ik nog niet eerder gedaan.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="opdracht1/images/goedPunt.png" width="375px" alt="een goed punt van opdracht 1">
 
 
   ### Dit was lastig/Is niet gelukt:
   Ik had het einde van mijn animatie wat vloeiender willen laten verlopen. Omdat de kroon bestaat uit drie losse onderdelen
   bleek het lastig om rotaties mooi uit te laten voeren. 
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="opdracht1/images/verbeterpunt.png" width="375px" alt="verbeterpunt voor opdracht 1">
 </details>
 
 
@@ -74,7 +78,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Opdracht 2 plan
 
 <details>
-  <summary>uitwerken na schetsen idee (voor week 5)</summary>
+  <summary>Ik wil een pagina maken waarop de gebruiker een Nike schoen tot in detail kan customizen. Ik zal op de Nike
+  website screenshots maken van elk onderdeel van de schoen in tien kleuren, dan knip ik al deze onderdelen uit in photoshop.
+  Zodra ik dat gedaan heb kan ik deze gekleurde onderdelen over een plaatje van dezelfde blanco schoen plakken, op deze manier
+  kan de gebruiker elk onderdeel apart van elkaar aanpassen. Daarnaast wil ik de gebruiker graag de mogelijkheid geven om
+  zijn/haar creatie op te slaan (en dus ook terug te halen).</summary>
 
 
   ### Je ontwerp:
@@ -83,10 +91,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Schoen tot in detail kunnen customizen
+  - Schoen kunnen opslaan
+  - Opgeslagen schoen terug kunnen halen
 </details>
 
 

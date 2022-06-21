@@ -285,7 +285,7 @@ function creatieVerwijderen() {
     let teVerwijderenCreatie = lijstMetCreaties[creatieIndexInArray];
 
     // feedback richting gebruiker tonen 
-    meldingTonen(`${teVerwijderenCreatie.naam}'s schoen is verwijderd`);
+    meldingTonen(`${teVerwijderenCreatie.naam} 's schoen is verwijderd`);
 
     // de creatie uit de array verwijderen
     lijstMetCreaties.splice(this.dataset.index, 1);

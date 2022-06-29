@@ -151,7 +151,7 @@ header img{
 .knoppen button {
     background-color: var(--color-text);
     color: var(--color-text-white);
-    font-size: 0.9rem;
+    font-size: var(--button--text);
     border: 0em;
     padding: 1em 0.7em;
     margin: 0.5em 1em;
@@ -164,25 +164,157 @@ header img{
     border: 0.4em solid var(--color-text);
 }
 
+.knoppen #bovenZoolButton {
+    grid-area: bovenZool;
+}
+
+.knoppen #onderZoolButton {
+    grid-area: onderZool;
+}
+
+.knoppen #bodyAchterButton {
+    grid-area: bodyAchter;
+}
+
+.knoppen #bodyVoorButton {
+    grid-area: bodyVoor;
+}
+
+.knoppen #bodyMiddenButton {
+    grid-area: bodyMidden;
+}
+
+.knoppen #logoButton {
+    grid-area: logo;
+}
+
+.knoppen #neusButton {
+    grid-area: neus;
+}
+
+.knoppen #resetButton {
+    grid-area: reset;
+}
+
+.knoppen #save {
+    grid-area: save;
+}
+
+.knoppen #inputVak {
+    grid-area: input;
+}
+
+
 #inputVak {
     justify-self: center;
     align-self: end;
+    font-size: var(--button--text);
+    border: none;
+    border: 0.4em solid var(--color-text);
+    width: 95%;
+    margin: 0.5em 1em;
+    
+}
+
+#naamInput {
+    border: none;
+    font-size: var(--button--text);
+    width: 100%;
+    
 }
 
 
 #inputVak #input{
     position: relative;
-    width: 100%;
     height: auto;
-    margin: 0.5em 1em;
+    
 }
 
     @media only screen 
     and (max-width: 320px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 10em;
+            width: 18em;
             margin: auto;
             height: auto;
+        }
+
+        html {
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        header img{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.6rem;
+            --button--text: 0.5rem;
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header"
+            "schoen"
+            "knoppen"
+            ;
+        }
+
+        .schoen {
+            height: fit-content;
+            
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 11em;
+            padding: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
     }
 

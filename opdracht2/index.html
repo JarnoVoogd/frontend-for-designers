@@ -14,20 +14,30 @@
 
 <body>
 	<header>
-        <div>
-            <a href="index.html"><img src="images/nikeLogo.svg" alt="Logo van Nike"/></a>
+        <div class="stylingDiv">
+            <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" class="nikeSvg" viewBox="0 0 192.756 192.756">
+                <g fill-rule="evenodd" clip-rule="evenodd">
+                <path fill="" color="ffff" fill-opacity="0" d="M0 0h192.756v192.756H0V0z"/>
+                <path d="M42.741 71.477c-9.881 11.604-19.355 25.994-19.45 36.75-.037 4.047 1.255 7.58 4.354 10.256 4.46 3.854 9.374 5.213 14.264 5.221 7.146.01 14.242-2.873 19.798-5.096 9.357-3.742 112.79-48.659 112.79-48.659.998-.5.811-1.123-.438-.812-.504.126-112.603 30.505-112.603 30.505a24.771 24.771 0 0 1-6.524.934c-8.615.051-16.281-4.731-16.219-14.808.024-3.943 1.231-8.698 4.028-14.291z"/></g></svg>
+            </a>
         </div>
+        <button id="DMButton" onclick="darkModeToggle()">Dark mode</button>
     </header>
 
     <div class="container">
         <div class="content">
-            <h2>Welkom! Customize een paar Air Force 1's zoals jij dat wilt!</h2>
+            <h2 id="welkom">Welkom! Customize een paar Air Force 1's zoals jij dat wilt!</h2>
+            <!-- is dit een h3? -->
             <h3 id="melding"></h3>
+            <!-- is dit een h3? -->
+            <h3 id="aantalCreaties">aantal creaties: <span>0</span></h3>
+            <!-- de lijst met creaties -->
+            <ul id="deLijst" class="lijstVerbergen"></ul>
         </div>
 
 
         <div class="schoen">
-            <img id="schoenFoto" src="images/IMG-MainSchoen2.png" alt="Nike Schoen wit"/>
+            <img id="schoenFoto" src="images/IMG-MainSchoenDM.png" alt="Nike Schoen wit"/>
             <img id="bovenZool" src="images/ZoolBoven/IMG-ZoolBovenWit.png" alt="Boven zool wit"/>
             <img id="onderZool" src="images/ZoolOnder/IMG-ZoolOnderWit.png" alt="Onder zool wit"/>
             <img id="bodyAchter" src="images/BodyAchter/IMG-BodyAchterWit.png" alt="Body achter wit"/>
@@ -38,24 +48,32 @@
         </div>
 
         <div class="knoppen">
-            <button id="bovenZoolButton">Boven zool</button>
-            <button id="onderZoolButton">Onder zool</button>
-            <button id="bodyAchterButton">Body achter</button>
-            <button id="bodyMiddenButton">Body midden</button>
-            <button id="bodyVoorButton">Body voor</button>
-            <button id="logoButton">Logo</button>
-            <button id="neusButton">Neus</button>
+            <button id="bovenZoolButton" value="bovenZool" class="optie">Boven zool</button>
+            <button id="onderZoolButton" value="onderZool" class="optie">Onder zool</button>
+            <button id="bodyVoorButton" value="bodyVoor" class="optie">Body voor</button>
+            <button id="bodyMiddenButton" value="bodyMidden" class="optie">Body midden</button>
+            <button id="bodyAchterButton" value="bodyAchter" class="optie">Body achter</button>
+            <button id="logoButton" value="logo" class="optie">Logo</button>
+            <button id="neusButton" value="neus" class="optie">Neus</button>
+            <button id="toonCreaties" onclick="toonCreatiesKleinScherm()" class="buttonVerbergen">Toon creaties</button>
             <button id="resetButton">Reset</button>
-            <button id="save">save</button>
-            <button id="creatie">creatie</button>
             <div id="inputVak">
-                <input type="text" id="input">naam</label>
+                <input type="text" id="naamInput" maxlength="7" placeholder="Naam"><label for="naamInput"></label>
             </div>
+            <button id="save">save</button>
             
-        </div>
+            
+            <!-- <button id="creatie">creatie</button> -->
+
+            
+        <!-- </div>
+
+        <div class="schoenen">
+            
+        </div> -->
     </div>
 
-	<script src="scripts/script.js"></script>
+	<script src="scripts/script-fancy.js"></script>
 </body>
 	
 </html>

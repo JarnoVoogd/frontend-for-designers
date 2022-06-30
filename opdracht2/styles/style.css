@@ -43,7 +43,31 @@ button, summary {
     --grote--text: 1rem;
     --button--text: 0.9rem;
     font-size: 16px;
+
+    --darkMode-text:#ffff;
+	--darkMode-text-black: #000;
+	--darkMode--background-black: #1e1e1e;
+	--darkMode-background-grey: #494949;
 }
+
+
+/* @media (prefers-color-scheme: light) {
+	:root {
+		--color-text:#111;
+        --color-text-white: #ffff;
+        --color--background-grey: #efefef;
+        --color-background-white: #f6f6f6;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text:#111;
+        --color-text-white: #ffff;
+        --color--background-grey: #2f2f2f;
+        --color-background-white: #878787;
+	}
+} */
 
 
 
@@ -53,16 +77,22 @@ button, summary {
 /* JOUW STYLING */
 /****************/
 html {
-    max-height: 100vh;
+    height: 100vh;
 }
 
 body {
   font-family:eenfont, sans-serif;
   color:var(--color-text);
   background-color:var(--color--background-grey);
-  max-height: 100vh;
-  
+  height: 100vh;
+  transition: all 2s;
 }
+
+body.darkModeClass {
+    background-color: var(--darkMode--background-black);
+    color: var(--color--background-grey);
+}
+
 
 /* jouw code */
 
@@ -73,23 +103,72 @@ body {
 header{
     margin: auto;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    ". nikeSvg button"
+    ;
+    padding-bottom: 0.4em;
+
 }
 
 header div{
-    max-width: 100em;
     max-height: 5em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
-    border: 0.05em solid var(--color--background-grey);
     border-bottom: none;
+    /* transition: all 2s; */
+} 
+
+header #DMButton {
+    background-color: var(--color-text);
+    color: var(--color-text-white);
+    font-size: var(--button--text);
+    border: 0em;
+    padding: 0.6em 1.7em;
+    margin: 0.5em 1em;
+    cursor: pointer;
+    transform: scale(1s);
+    /* transition: all 2s; */
+    position: relative;
+    grid-area: button;
+    width: fit-content;
+    height: fit-content;
+    justify-self: end;
+    align-self: center;
 }
 
-header img{
+header #DMButton:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+header #DMButton.darkModeClass {
+    color: var(--color-text);
+    background-color: var(--color--background-grey);
+}
+
+
+
+.stylingDiv {
+    grid-area: nikeSvg;
+}
+
+.nikeSvg {
     width: 8em;
     height: auto;
+    transition: all 2s;
+    justify-self: center;
 }
+
+.nikeSvg.darkModeClass {
+    fill: var(--color--background-grey);
+}
+
+
 
 .container{
     max-width: 80em;
@@ -100,34 +179,71 @@ header img{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.5fr 0.4fr;
+    padding: 0 0 1em 0;
+    transition: all 2s;
 }
+
+.container.darkModeClass {
+    background-color: var(--darkMode-background-grey);
+    border: 0.1em solid var(--darkMode--background-black);
+}
+
+
 
 .content{
     padding: 0.6em 0em 0.6em 0em;
     font-size: var(--grote--text);
     grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 2fr;
 }
 
-.schoen{
-    margin: 0em 0em 0.6em 0em;
+.content #melding {
+    margin:  0;
+    align-self: center;
+}
+
+.content #aantalCreaties {
+    margin: 0.3em 0;
+    align-self: center;
+}
+
+.content #welkom {
+    margin: 1em 0.5em 0 0.5em;
+}
+
+.schoen {
+    margin: 0 0 0.6em 0;
     grid-area: schoen;
     position: relative;
 }
 
-#schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+.schoen img {
+    display: block;
     width: 22em;
     height: auto;
-    
 }
 
-#bovenZool, #logo, #bodyAchter, #bodyMidden, #bodyVoor, #onderZool, #neus{
+.schoen img:not(:first-of-type) {
     position: absolute;
-    margin: auto auto 0.6em auto;
+    top:0;
     left: 50%;
     transform: translateX(-50%);
-    
 }
 
+/* kleine schoentjes */
+#deLijst .schoen {
+    margin: 0;
+}
+
+#deLijst .schoen img {
+    width:6em;
+}
+
+/***********/
+/* KNOPPEN */
+/***********/
 .knoppen {
     width: 100%;
     height: auto;
@@ -141,58 +257,483 @@ header img{
 .knoppen button {
     background-color: var(--color-text);
     color: var(--color-text-white);
-    font-size: 0.9rem;
+    font-size: var(--button--text);
+    border: 0.4em solid var(--color-text);
     border: 0em;
     padding: 1em 0.7em;
     margin: 0.5em 1em;
     cursor: pointer;
+    transform: scale(1s);
+    transition: transform 0.3s ease;
+    transition: filter 2s ease-in-out;
+    
 }
 
-.knoppen #resetButton, #save, #creatie {
+.knoppen button.darkModeClass {
+    filter: invert(100%);
+    transition: filter 2s ease-in-out;
+}
+
+.knoppen button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.knoppen button:active {
+    filter: invert(100%);
+}
+
+.knoppen button.darkModeClass:active {
+    filter: invert(0%);
+}
+
+.knoppen #resetButton, #save, #creatie, #toonCreaties{
     background-color: var(--color--background-grey);
     color: var(--color-text);
     border: 0.4em solid var(--color-text);
 }
 
+.knoppen #resetButton.darkModeClass, #save.darkModeClass, #creatie.darkModeClass, #toonCreaties.darkModeClass{
+    filter: invert(100%)
+}
+
+.knoppen #resetButton:active, #save:active, #creatie:active, #toonCreaties:active{
+    filter: invert(100%);
+}
+
+.knoppen #bovenZoolButton {
+    grid-area: bovenZool;
+}
+
+.knoppen #onderZoolButton {
+    grid-area: onderZool;
+}
+
+.knoppen #bodyAchterButton {
+    grid-area: bodyAchter;
+}
+
+.knoppen #bodyVoorButton {
+    grid-area: bodyVoor;
+}
+
+.knoppen #bodyMiddenButton {
+    grid-area: bodyMidden;
+}
+
+.knoppen #logoButton {
+    grid-area: logo;
+}
+
+.knoppen #neusButton {
+    grid-area: neus;
+}
+
+.knoppen #resetButton {
+    grid-area: reset;
+}
+
+.knoppen #save {
+    grid-area: save;
+}
+
+.knoppen #inputVak {
+    grid-area: input;
+}
+
+
 #inputVak {
     justify-self: center;
     align-self: end;
+    font-size: var(--button--text);
+    border: none;
+    border: 0.4em solid var(--color-text);
+    width: 95%;
+    margin: 0.5em 1em;
+    transition: all 2s ease-in-out;
+}
+
+#inputVak.darkModeClass {
+    filter: invert(100%);
+    transition: all 2s ease-in-out;
+}
+
+#naamInput {
+    border: none;
+    font-size: var(--button--text);
+    width: 100%;
+    
 }
 
 
 #inputVak #input{
     position: relative;
-    width: 100%;
     height: auto;
-    margin: 0.5em 1em;
+    
 }
 
+
+/************/
+/* DE LIJST */
+/************/
+
+#deLijst {
+    margin:0 auto;
+    padding:0;
+    list-style: none;
+    display: flex;
+    gap:.5em;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+#deLijst li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    gap:.1em;
+    height: fit-content;
+}
+
+#deLijst h4 {
+    margin:0;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* de toon/schoen button */
+#deLijst button:first-of-type {
+    padding:0;
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/* de verwijder button */
+#deLijst button:last-of-type {
+    grid-column-end: -1;
+    grid-row-start:1;
+    justify-self: end;
+    border:none;
+}
+
+
+/************************/
+/* BEGIN MEDIA QUERIES */
+/************************/
+
     @media only screen 
-    and (max-width: 320px) {
+    and (max-width: 370px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 10em;
+            width: 21em;
             margin: auto;
             height: auto;
+        }
+
+        html {
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .nikeSvg{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.6rem;
+            --button--text: 0.5rem;
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header"
+            "schoen"
+            "knoppen"
+            ;
+        }
+
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstVerbergen 0.3s
+        }
+
+        @keyframes lijstVerbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstTonen 0.3s;
+        }
+
+        @keyframes lijstTonen {
+            from {
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
+        }
+
+        .buttonVerbergen {
+            animation: buttonVerbergen 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
+            
+        }
+
+        .buttonTonen {
+            animation: buttonTonen 0.3s;
+            opacity: 1;
+        }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+
+        .schoen {
+            height: fit-content;
+            
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+            min-height: 15em;
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height:15;
+            padding: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
     }
 
 
     @media only screen 
-    and (min-width: 320px) {
+    and (min-width: 370px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 18em;
+            width: 100%;
             margin: auto;
             height: auto;
         }
 
-        .knoppen {
+        html {
+            max-height: 100vh;
+            /* overflow: hidden; */
+        }
+
+        .nikeSvg{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            max-height: 2em;
+        }
+
+        body {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.6rem;
+            --button--text: 0.5rem;
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header"
+            "schoen"
+            "knoppen"
+            ;
+        }
+
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstVerbergen 0.3s
+        }
+
+        @keyframes lijstVerbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstTonen 0.3s;
+        }
+
+        @keyframes lijstTonen {
+            from {
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
+        }
+
+        .buttonVerbergen {
+            animation: buttonVerbergen 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
             
         }
-        
 
-        .knoppen button{
-         
-        
+        .buttonTonen {
+            animation: buttonTonen 0.3s;
+            opacity: 1;
+        }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+        .schoen {
+            height: fit-content;
+            padding-bottom: 2em;
+            padding: 0;
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+            /* padding-bottom: 3em; */
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 15em;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        /* #deLijst {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 10;
+            width: 100%;
+        } */
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
     }
 
@@ -205,15 +746,7 @@ header img{
             height: auto;
         }
 
-        .knoppen {
-            
-        }
-        
-
-        .knoppen button{
-            
-        
-        }
+       
     }
 
 
@@ -225,16 +758,7 @@ header img{
             height: auto;
         }
 
-        .knoppen {
-            padding: 3em 0;
-            
-        }
-        
-
-        .knoppen button{
-            
-        
-        }
+       
 
         .container {
             grid-template-columns: auto;
@@ -246,11 +770,24 @@ header img{
             height: 60em;
             max-width: 100em;
         }
-
-        .schoen {
-            margin: 0;
-        }
         
        
                                
     }
+
+
+
+
+/***************************/
+/* KEYBOARD ACCESSIBILITY */
+/***************************/
+
+.knoppen button:focus {
+    transform: scale(1.05);
+    transition: scale 0.3s;
+}
+
+.knoppen input:focus {
+    transform: scale(1.05);
+    transition: scale 0.3s;
+}

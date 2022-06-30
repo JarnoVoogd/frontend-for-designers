@@ -1,0 +1,256 @@
+/* CSS Document */
+
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'eenfont';
+	src: url('../fonts/eenfont.woff2') format('woff2'),
+			 url('../fonts/eenfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-text-white: #ffff;
+	--color--background-grey: #efefef;
+	--color-background-white: #f6f6f6;
+    --grote--text: 1rem;
+    --button--text: 0.9rem;
+    font-size: 16px;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+html {
+    max-height: 100vh;
+}
+
+body {
+  font-family:eenfont, sans-serif;
+  color:var(--color-text);
+  background-color:var(--color--background-grey);
+  max-height: 100vh;
+  
+}
+
+/* jouw code */
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    margin: auto;
+    text-align: center;
+}
+
+header div{
+    max-width: 100em;
+    max-height: 5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    border: 0.05em solid var(--color--background-grey);
+    border-bottom: none;
+}
+
+header img{
+    width: 8em;
+    height: auto;
+}
+
+.container{
+    max-width: 80em;
+    text-align: center;
+    margin: auto;
+    background-color: var(--color-background-white);
+    border: 0.1em solid var(--color--background-grey);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.4fr;
+}
+
+.content{
+    padding: 0.6em 0em 0.6em 0em;
+    font-size: var(--grote--text);
+    grid-area: header;
+}
+
+.schoen{
+    margin: 0em 0em 0.6em 0em;
+    grid-area: schoen;
+    position: relative;
+}
+
+#schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+    width: 22em;
+    height: auto;
+    
+}
+
+#bovenZool, #logo, #bodyAchter, #bodyMidden, #bodyVoor, #onderZool, #neus{
+    position: absolute;
+    margin: auto auto 0.6em auto;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.knoppen {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 50px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-area: knoppen;
+}
+
+.knoppen button {
+    background-color: var(--color-text);
+    color: var(--color-text-white);
+    font-size: 0.9rem;
+    border: 0em;
+    padding: 1em 0.7em;
+    margin: 0.5em 1em;
+    cursor: pointer;
+}
+
+.knoppen #resetButton, #save, #creatie {
+    background-color: var(--color--background-grey);
+    color: var(--color-text);
+    border: 0.4em solid var(--color-text);
+}
+
+#inputVak {
+    justify-self: center;
+    align-self: end;
+}
+
+
+#inputVak #input{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0.5em 1em;
+}
+
+    @media only screen 
+    and (max-width: 320px) {
+        #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+            width: 10em;
+            margin: auto;
+            height: auto;
+        }
+    }
+
+
+    @media only screen 
+    and (min-width: 320px) {
+        #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+            width: 18em;
+            margin: auto;
+            height: auto;
+        }
+
+        .knoppen {
+            
+        }
+        
+
+        .knoppen button{
+         
+        
+        }
+    }
+
+
+    @media only screen 
+    and (min-width: 480px) {
+        #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+            width: 24em;
+            margin: auto;
+            height: auto;
+        }
+
+        .knoppen {
+            
+        }
+        
+
+        .knoppen button{
+            
+        
+        }
+    }
+
+
+    @media only screen 
+    and (min-width: 600px) {
+        #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
+            width: 40em;
+            margin: auto;
+            height: auto;
+        }
+
+        .knoppen {
+            padding: 3em 0;
+            
+        }
+        
+
+        .knoppen button{
+            
+        
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header header"
+            "schoen knoppen"
+            ;
+            height: 60em;
+            max-width: 100em;
+        }
+
+        .schoen {
+            margin: 0;
+        }
+        
+       
+                               
+    }

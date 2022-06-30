@@ -43,7 +43,31 @@ button, summary {
     --grote--text: 1rem;
     --button--text: 0.9rem;
     font-size: 16px;
+
+    --darkMode-text:#ffff;
+	--darkMode-text-black: #000;
+	--darkMode--background-black: #1e1e1e;
+	--darkMode-background-grey: #494949;
 }
+
+
+/* @media (prefers-color-scheme: light) {
+	:root {
+		--color-text:#111;
+        --color-text-white: #ffff;
+        --color--background-grey: #efefef;
+        --color-background-white: #f6f6f6;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text:#111;
+        --color-text-white: #ffff;
+        --color--background-grey: #2f2f2f;
+        --color-background-white: #878787;
+	}
+} */
 
 
 
@@ -61,8 +85,14 @@ body {
   color:var(--color-text);
   background-color:var(--color--background-grey);
   height: 100vh;
-  
+  transition: all 2s;
 }
+
+body.darkModeClass {
+    background-color: var(--darkMode--background-black);
+    color: var(--color--background-grey);
+}
+
 
 /* jouw code */
 
@@ -73,6 +103,14 @@ body {
 header{
     margin: auto;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    ". nikeSvg button"
+    ;
+    padding-bottom: 0.4em;
+
 }
 
 header div{
@@ -81,14 +119,56 @@ header div{
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
-    border: 0.05em solid var(--color--background-grey);
     border-bottom: none;
+    /* transition: all 2s; */
+} 
+
+header #DMButton {
+    background-color: var(--color-text);
+    color: var(--color-text-white);
+    font-size: var(--button--text);
+    border: 0em;
+    padding: 0.6em 1.7em;
+    margin: 0.5em 1em;
+    cursor: pointer;
+    transform: scale(1s);
+    /* transition: all 2s; */
+    position: relative;
+    grid-area: button;
+    width: fit-content;
+    height: fit-content;
+    justify-self: end;
+    align-self: center;
 }
 
-header img{
+header #DMButton:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+header #DMButton.darkModeClass {
+    color: var(--color-text);
+    background-color: var(--color--background-grey);
+}
+
+
+
+.stylingDiv {
+    grid-area: nikeSvg;
+}
+
+.nikeSvg {
     width: 8em;
     height: auto;
+    transition: all 2s;
+    justify-self: center;
 }
+
+.nikeSvg.darkModeClass {
+    fill: var(--color--background-grey);
+}
+
+
 
 .container{
     max-width: 80em;
@@ -100,7 +180,15 @@ header img{
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.5fr 0.4fr;
     padding: 0 0 1em 0;
+    transition: all 2s;
 }
+
+.container.darkModeClass {
+    background-color: var(--darkMode-background-grey);
+    border: 0.1em solid var(--darkMode--background-black);
+}
+
+
 
 .content{
     padding: 0.6em 0em 0.6em 0em;
@@ -170,19 +258,33 @@ header img{
     background-color: var(--color-text);
     color: var(--color-text-white);
     font-size: var(--button--text);
+    border: 0.4em solid var(--color-text);
     border: 0em;
     padding: 1em 0.7em;
     margin: 0.5em 1em;
     cursor: pointer;
     transform: scale(1s);
-    transition: all 0.3s;
+    transition: transform 0.3s ease;
+    transition: filter 2s ease-in-out;
     
+}
+
+.knoppen button.darkModeClass {
+    filter: invert(100%);
+    transition: filter 2s ease-in-out;
 }
 
 .knoppen button:hover {
     transform: scale(1.05);
-    /* font-size: calc(var(--button--text) * 1.1); */
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.knoppen button:active {
+    filter: invert(100%);
+}
+
+.knoppen button.darkModeClass:active {
+    filter: invert(0%);
 }
 
 .knoppen #resetButton, #save, #creatie, #toonCreaties{
@@ -191,6 +293,13 @@ header img{
     border: 0.4em solid var(--color-text);
 }
 
+.knoppen #resetButton.darkModeClass, #save.darkModeClass, #creatie.darkModeClass, #toonCreaties.darkModeClass{
+    filter: invert(100%)
+}
+
+.knoppen #resetButton:active, #save:active, #creatie:active, #toonCreaties:active{
+    filter: invert(100%);
+}
 
 .knoppen #bovenZoolButton {
     grid-area: bovenZool;
@@ -241,7 +350,12 @@ header img{
     border: 0.4em solid var(--color-text);
     width: 95%;
     margin: 0.5em 1em;
-    
+    transition: all 2s ease-in-out;
+}
+
+#inputVak.darkModeClass {
+    filter: invert(100%);
+    transition: all 2s ease-in-out;
 }
 
 #naamInput {
@@ -321,7 +435,7 @@ header img{
             overflow: hidden;
         }
 
-        header img{
+        .nikeSvg{
             width: 3em;
             height: auto;
         }
@@ -345,19 +459,66 @@ header img{
             ;
         }
 
-        .lijstVerbergen{
-            visibility: hidden;
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstVerbergen 0.3s
+        }
+
+        @keyframes lijstVerbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            animation: lijstTonen 0.3s;
+        }
+
+        @keyframes lijstTonen {
+            from {
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
         }
 
         .buttonVerbergen {
+            animation: buttonVerbergen 0.3s;
             opacity: 0;
-            transition: opacity 0.5s ease-in;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
+            
         }
 
         .buttonTonen {
+            animation: buttonTonen 0.3s;
             opacity: 1;
-            transition: opacity 0.5s ease-in;
         }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
 
         .schoen {
             height: fit-content;
@@ -425,7 +586,7 @@ header img{
             /* overflow: hidden; */
         }
 
-        header img{
+        .nikeSvg{
             width: 3em;
             height: auto;
         }
@@ -456,10 +617,10 @@ header img{
         .lijstVerbergen {
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
-            animation: verbergen 0.3s
+            animation: lijstVerbergen 0.3s
         }
 
-        @keyframes verbergen {
+        @keyframes lijstVerbergen {
             from {
                 transform: translateX(0);
 
@@ -471,11 +632,11 @@ header img{
         .lijstTonen {
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
-            animation: tonen 0.3s;
+            animation: lijstTonen 0.3s;
         }
 
-        @keyframes tonen {
-            from{
+        @keyframes lijstTonen {
+            from {
                 transform: translateX(-2em);
             } to {
                 transform: translateX(0);
@@ -483,13 +644,34 @@ header img{
         }
 
         .buttonVerbergen {
+            animation: buttonVerbergen 0.3s;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
+            
         }
 
         .buttonTonen {
+            animation: buttonTonen 0.3s;
             opacity: 1;
-            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
         }
 
         .schoen {

@@ -398,6 +398,56 @@ let meldingTonen = (melding) => {
 };
 
 
+/************/
+/* DARKMODE */
+/************/
+let darkModeButton = document.getElementById("DMButton");
+let body = document.querySelector("body");
+let svg = document.querySelector(".nikeSvg");
+let div = document.querySelector(".stylingDiv");
+let container = document.querySelector(".container");
+let onderZool = document.getElementById("onderZoolButton");
+let bovenZool = document.getElementById("bovenZoolButton");
+let bodyAchter = document.getElementById("bodyAchterButton");
+let bodyVoor = document.getElementById("bodyVoorButton");
+let bodyMidden = document.getElementById("bodyMiddenButton");
+let neus = document.getElementById("neusButton");
+let logo = document.getElementById("logoButton");
+let reset = document.getElementById("resetButton");
+let creaties = document.getElementById("toonCreaties");
+let save = document.getElementById("save");
+let input = document.getElementById("inputVak")
+
+
+
+let darkModeToggle = () => {
+    darkModeButton.classList.toggle("darkModeClass");
+    svg.classList.toggle("darkModeClass");
+    body.classList.toggle("darkModeClass");
+    div.classList.toggle("darkModeClass");
+    container.classList.toggle("darkModeClass");
+    onderZool.classList.toggle("darkModeClass");
+    bovenZool.classList.toggle("darkModeClass");
+    bodyAchter.classList.toggle("darkModeClass");
+    bodyMidden.classList.toggle("darkModeClass");
+    bodyVoor.classList.toggle("darkModeClass");
+    neus.classList.toggle("darkModeClass");
+    logo.classList.toggle("darkModeClass");
+    reset.classList.toggle("darkModeClass");
+    creaties.classList.toggle("darkModeClass");
+    save.classList.toggle("darkModeClass");
+    input.classList.toggle("darkModeClass");
+
+
+    if (darkModeButton.classList.contains("darkModeClass")) {
+        darkModeButton.innerHTML = "Light mode";
+    } else {
+        darkModeButton.innerHTML = "Dark mode";
+    }
+}
+
+
+
 /********************************************/
 /* CREATIES VERBERGEN/TONEN OP KLEIN SCHERM */
 /********************************************/

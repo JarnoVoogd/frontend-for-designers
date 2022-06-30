@@ -21,13 +21,13 @@
 
     <div class="container">
         <div class="content">
-            <h2>Welkom! Customize een paar Air Force 1's zoals jij dat wilt!</h2>
+            <h2 id="welkom">Welkom! Customize een paar Air Force 1's zoals jij dat wilt!</h2>
             <!-- is dit een h3? -->
             <h3 id="melding"></h3>
             <!-- is dit een h3? -->
             <h3 id="aantalCreaties">aantal creaties: <span>0</span></h3>
             <!-- de lijst met creaties -->
-            <ul id="deLijst"></ul>
+            <ul id="deLijst" class="lijstVerbergen"></ul>
         </div>
 
 
@@ -50,13 +50,13 @@
             <button id="bodyVoorButton" value="bodyVoor" class="optie">Body voor</button>
             <button id="logoButton" value="logo" class="optie">Logo</button>
             <button id="neusButton" value="neus" class="optie">Neus</button>
-
-            <div id="inputVak">
-                <input type="text" id="naamInput" maxlength="20" placeholder="Naam"><label for="naamInput"></label>
-            </div>
-            
+            <button id="toonCreaties" onclick="toonCreatiesKleinScherm()" class="buttonVerbergen">Toon creaties</button>
             <button id="resetButton">Reset</button>
             <button id="save">save</button>
+            <div id="inputVak">
+                <input type="text" id="naamInput" maxlength="7" placeholder="Naam"><label for="naamInput"></label>
+            </div>
+            
             <!-- <button id="creatie">creatie</button> -->
 
             

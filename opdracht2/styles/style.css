@@ -53,14 +53,14 @@ button, summary {
 /* JOUW STYLING */
 /****************/
 html {
-    max-height: 100vh;
+    height: 100vh;
 }
 
 body {
   font-family:eenfont, sans-serif;
   color:var(--color-text);
   background-color:var(--color--background-grey);
-  max-height: 100vh;
+  height: 100vh;
   
 }
 
@@ -76,7 +76,6 @@ header{
 }
 
 header div{
-    max-width: 100em;
     max-height: 5em;
     display: flex;
     justify-content: space-evenly;
@@ -100,12 +99,30 @@ header img{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.5fr 0.4fr;
+    padding: 0 0 1em 0;
 }
 
 .content{
     padding: 0.6em 0em 0.6em 0em;
     font-size: var(--grote--text);
     grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 2fr;
+}
+
+.content #melding {
+    margin:  0;
+    align-self: center;
+}
+
+.content #aantalCreaties {
+    margin: 0.3em 0;
+    align-self: center;
+}
+
+.content #welkom {
+    margin: 1em 0.5em 0 0.5em;
 }
 
 .schoen {
@@ -136,8 +153,9 @@ header img{
     width:6em;
 }
 
-/* knoppen */
-
+/***********/
+/* KNOPPEN */
+/***********/
 .knoppen {
     width: 100%;
     height: auto;
@@ -156,13 +174,23 @@ header img{
     padding: 1em 0.7em;
     margin: 0.5em 1em;
     cursor: pointer;
+    transform: scale(1s);
+    transition: all 0.3s;
+    
 }
 
-.knoppen #resetButton, #save, #creatie {
+.knoppen button:hover {
+    transform: scale(1.05);
+    /* font-size: calc(var(--button--text) * 1.1); */
+    transition: all 0.3s ease;
+}
+
+.knoppen #resetButton, #save, #creatie, #toonCreaties{
     background-color: var(--color--background-grey);
     color: var(--color-text);
     border: 0.4em solid var(--color-text);
 }
+
 
 .knoppen #bovenZoolButton {
     grid-area: bovenZool;
@@ -230,10 +258,60 @@ header img{
     
 }
 
+
+/************/
+/* DE LIJST */
+/************/
+
+#deLijst {
+    margin:0 auto;
+    padding:0;
+    list-style: none;
+    display: flex;
+    gap:.5em;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+#deLijst li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    gap:.1em;
+    height: fit-content;
+}
+
+#deLijst h4 {
+    margin:0;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* de toon/schoen button */
+#deLijst button:first-of-type {
+    padding:0;
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/* de verwijder button */
+#deLijst button:last-of-type {
+    grid-column-end: -1;
+    grid-row-start:1;
+    justify-self: end;
+    border:none;
+}
+
+
+/************************/
+/* BEGIN MEDIA QUERIES */
+/************************/
+
     @media only screen 
-    and (max-width: 320px) {
+    and (max-width: 370px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 18em;
+            width: 21em;
             margin: auto;
             height: auto;
         }
@@ -267,6 +345,20 @@ header img{
             ;
         }
 
+        .lijstVerbergen{
+            visibility: hidden;
+        }
+
+        .buttonVerbergen {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+        .buttonTonen {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+
         .schoen {
             height: fit-content;
             
@@ -275,6 +367,7 @@ header img{
         .content {
             height: fit-content;
             overflow: hidden;
+            min-height: 15em;
         }
 
         .content h2 {
@@ -284,7 +377,7 @@ header img{
         .knoppen {
             overflow-x: hidden;
             overflow-y: auto;
-            height: 11em;
+            max-height:15;
             padding: 0;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 3em 3em 3em 3em 3em;
@@ -320,21 +413,145 @@ header img{
 
 
     @media only screen 
-    and (min-width: 320px) {
+    and (min-width: 370px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 18em;
+            width: 100%;
             margin: auto;
             height: auto;
         }
 
-        .knoppen {
-            
+        html {
+            max-height: 100vh;
+            /* overflow: hidden; */
         }
-        
 
-        .knoppen button{
-         
-        
+        header img{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            max-height: 2em;
+        }
+
+        body {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.6rem;
+            --button--text: 0.5rem;
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header"
+            "schoen"
+            "knoppen"
+            ;
+        }
+
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: verbergen 0.3s
+        }
+
+        @keyframes verbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            animation: tonen 0.3s;
+        }
+
+        @keyframes tonen {
+            from{
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
+        }
+
+        .buttonVerbergen {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .buttonTonen {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .schoen {
+            height: fit-content;
+            padding-bottom: 2em;
+            padding: 0;
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+            /* padding-bottom: 3em; */
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 15em;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        /* #deLijst {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 10;
+            width: 100%;
+        } */
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
     }
 
@@ -347,15 +564,7 @@ header img{
             height: auto;
         }
 
-        .knoppen {
-            
-        }
-        
-
-        .knoppen button{
-            
-        
-        }
+       
     }
 
 
@@ -367,16 +576,7 @@ header img{
             height: auto;
         }
 
-        .knoppen {
-            padding: 3em 0;
-            
-        }
-        
-
-        .knoppen button{
-            
-        
-        }
+       
 
         .container {
             grid-template-columns: auto;
@@ -388,10 +588,6 @@ header img{
             height: 60em;
             max-width: 100em;
         }
-
-        .schoen {
-            margin: 0;
-        }
         
        
                                
@@ -400,47 +596,16 @@ header img{
 
 
 
+/***************************/
+/* KEYBOARD ACCESSIBILITY */
+/***************************/
 
-
-/************/
-/* DE LIJST */
-/************/
-
-#deLijst {
-    margin:0 auto;
-    padding:0;
-    list-style: none;
-    display: flex;
-    gap:.5em;
-    justify-content: center;
-    flex-wrap:wrap;
+.knoppen button:focus {
+    transform: scale(1.05);
+    transition: scale 0.3s;
 }
 
-#deLijst li {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr min-content;
-    gap:.1em;
-}
-
-#deLijst h4 {
-    margin:0;
-    font-size: 1em;
-    font-weight: 400;
-    text-align: left;
-}
-
-/* de toon/schoen button */
-#deLijst button:first-of-type {
-    padding:0;
-    grid-column: 1/-1;
-    justify-self: center;
-}
-
-/* de verwijder button */
-#deLijst button:last-of-type {
-    grid-column-end: -1;
-    grid-row-start:1;
-    justify-self: end;
-    border:none;
+.knoppen input:focus {
+    transform: scale(1.05);
+    transition: scale 0.3s;
 }

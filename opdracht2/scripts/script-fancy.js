@@ -353,6 +353,12 @@ let updateCreaties = () => {
         verwijderButton.addEventListener("click", creatieVerwijderen);
     });
 
+    if (lijst.classList.contains("lijstVerbergen")){
+    lijst.classList.remove("lijstVerbergen");
+    lijst.classList.add("lijstTonen");
+    }  
+      
+    checkVisibility();
 
 }
 
@@ -390,3 +396,69 @@ let meldingTonen = (melding) => {
         document.querySelector("#melding").innerHTML = "";
     }, 3000);
 };
+
+
+/********************************************/
+/* CREATIES VERBERGEN/TONEN OP KLEIN SCHERM */
+/********************************************/
+let toonButton = document.getElementById("toonCreaties") 
+let lijst = document.getElementById("deLijst");
+
+let toonCreatiesKleinScherm = () => {
+    if (lijst.classList.contains("lijstVerbergen")) {
+        lijst.classList.remove("lijstVerbergen");
+        lijst.classList.add("lijstTonen")
+    }
+    else if (lijst.classList.contains("lijstTonen")){
+        lijst.classList.remove("lijstTonen")
+        lijst.classList.add("lijstVerbergen")
+    }
+
+    checkVisibility();
+} 
+
+let checkVisibility = () => {
+    if (lijstMetCreaties.length > 0) {
+        toonButton.classList.remove("buttonVerbergen")
+        toonButton.classList.add("buttonTonen")
+        if (lijst.classList.contains("lijstVerbergen")) {
+        toonButton.innerHTML = "Toon creaties"
+        } else {
+        toonButton.innerHTML = "Verberg creaties"
+        }
+    } else if (lijstMetCreaties.length == 0) {
+        toonButton.innerHTML = "Verberg creaties"
+        toonButton.classList.add("buttonVerbergen")
+        toonButton.classList.remove("buttonTonen")
+    }
+}
+// document.querySelector("#toonCreaties").addEventListener("click", toonCreatiesKleinScherm())
+
+// if (lijstMetCreaties >= 0) {
+
+//     if (lijst.classList.contains("lijstVerbergen")) {
+//     toonButton.innerHTML = "Toon creaties"
+//     } else {
+//     toonButton.innerHTML = "Verberg creaties"
+//     }
+// } else {
+//     toonButton.innerHTML = "Verberg creaties"
+//     toonButton.classList.toggle("buttonVerbergen")
+// }
+
+
+
+
+// let checkVisibility = () => {
+//     if (lijstMetCreaties.length > 0) {
+//         toonButton.classList.remove("buttonVerbergen")
+//         if (lijst.classList.contains("lijstVerbergen")) {
+//         toonButton.innerHTML = "Toon creaties"
+//         } else {
+//         toonButton.innerHTML = "Verberg creaties"
+//         }
+//     } else if (lijstMetCreaties.length == 0) {
+//         toonButton.innerHTML = "Verberg creaties"
+//         toonButton.classList.add("buttonVerbergen")
+//     }
+// }

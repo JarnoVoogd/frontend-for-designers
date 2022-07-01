@@ -47,9 +47,9 @@ button, summary {
     --darkMode-text:#ffff;
 	--darkMode-text-black: #000;
 	--darkMode--background-black: #1e1e1e;
-	--darkMode-background-grey: #494949;
+	--darkMode-background-grey: #343434;
 }
-
+/* #494949 */
 
 /* @media (prefers-color-scheme: light) {
 	:root {
@@ -77,7 +77,8 @@ button, summary {
 /* JOUW STYLING */
 /****************/
 html {
-    height: 100vh;
+    max-height: 100vh;
+    height: fit-content;
 }
 
 body {
@@ -98,6 +99,23 @@ body.darkModeClass {
 
 *{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+*:focus-visible {
+    outline: none;
+    outline: 0.3em solid orange;
+    transform: scale(1.025);
+    transition: transform 0.2s;
+}
+
+*:focus:not(:focus-visible):not(.knoppen #save) {
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+    transform: scale(none);
+  }
+
+*:active {
+    outline: blue;
 }
 
 header{
@@ -131,19 +149,19 @@ header #DMButton {
     padding: 0.6em 1.7em;
     margin: 0.5em 1em;
     cursor: pointer;
-    transform: scale(1s);
-    /* transition: all 2s; */
     position: relative;
     grid-area: button;
     width: fit-content;
     height: fit-content;
     justify-self: end;
     align-self: center;
+    transition: all 0.15s ease;
 }
 
 header #DMButton:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+    transform: scale(1.025);
+    transition: all 0.15s ease;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 header #DMButton.darkModeClass {
@@ -258,15 +276,24 @@ header #DMButton.darkModeClass {
     background-color: var(--color-text);
     color: var(--color-text-white);
     font-size: var(--button--text);
-    border: 0.25em solid var(--color-text);
+    border: 0.15em solid var(--color-text);
     border: 0em;
     padding: 1em 0.7em;
     margin: 0.5em 1em;
     cursor: pointer;
-    transform: scale(1s);
-    transition: transform 0.3s ease;
-    transition: filter 2s ease-in-out;
-    
+    transition: transform 0.2s ease;
+}
+ 
+.knoppen button:hover {
+    transform: scale(1.025);
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+}
+
+.knoppen #save:hover, .knoppen #inputVak:hover {
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 .knoppen button.darkModeClass {
@@ -274,23 +301,21 @@ header #DMButton.darkModeClass {
     transition: filter 2s ease-in-out;
 }
 
-.knoppen button:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
 .knoppen button:active {
     filter: invert(100%);
+    transition: all 0s;
 }
 
 .knoppen button.darkModeClass:active {
     filter: invert(0%);
+    transition: all 0s;
+    
 }
 
 .knoppen #resetButton, #save, #creatie, #toonCreaties{
     background-color: var(--color--background-grey);
     color: var(--color-text);
-    border: 0.25em solid var(--color-text);
+    border: 0.15em solid var(--color-text);
 }
 
 .knoppen #resetButton.darkModeClass, #save.darkModeClass, #creatie.darkModeClass, #toonCreaties.darkModeClass{
@@ -347,10 +372,16 @@ header #DMButton.darkModeClass {
     align-self: end;
     font-size: var(--button--text);
     border: none;
-    border: 0.25em solid var(--color-text);
+    border: 0.15em solid var(--color-text);
     width: 95%;
     margin: 0.5em 1em;
-    transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#inputVak:hover {
+    transform: scale(1.025);
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 #inputVak.darkModeClass {
@@ -364,7 +395,6 @@ header #DMButton.darkModeClass {
     width: 100%;
     
 }
-
 
 #inputVak #input{
     position: relative;
@@ -407,6 +437,7 @@ header #DMButton.darkModeClass {
     padding:0;
     grid-column: 1/-1;
     justify-self: center;
+    
 }
 
 /* de verwijder button */
@@ -414,7 +445,16 @@ header #DMButton.darkModeClass {
     grid-column-end: -1;
     grid-row-start:1;
     justify-self: end;
-    border:none;
+    height: fit-content;
+    width: auto;
+    padding: 0.05em 0.3em;
+    font-size: 0.7rem;
+    background-color: var(--color--background-grey);
+    border: none;
+    
+    /* background: none;
+    border: 0.1em solid var(--color--background-grey);
+    color: var(--color-text); */
 }
 
 
@@ -425,7 +465,7 @@ header #DMButton.darkModeClass {
     @media only screen 
     and (max-width: 370px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 21em;
+            width: 100%;
             margin: auto;
             height: auto;
         }
@@ -461,8 +501,8 @@ header #DMButton.darkModeClass {
 
         .lijstVerbergen {
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            animation: lijstVerbergen 0.3s
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstVerbergen 0.2s
         }
 
         @keyframes lijstVerbergen {
@@ -476,8 +516,8 @@ header #DMButton.darkModeClass {
 
         .lijstTonen {
             opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-            animation: lijstTonen 0.3s;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstTonen 0.2s;
         }
 
         @keyframes lijstTonen {
@@ -489,7 +529,7 @@ header #DMButton.darkModeClass {
         }
 
         .buttonVerbergen {
-            animation: buttonVerbergen 0.3s;
+            animation: buttonVerbergen 0.2s;
             opacity: 0;
         }
 
@@ -505,7 +545,7 @@ header #DMButton.darkModeClass {
         }
 
         .buttonTonen {
-            animation: buttonTonen 0.3s;
+            animation: buttonTonen 0.2s;
             opacity: 1;
         }
 
@@ -583,7 +623,7 @@ header #DMButton.darkModeClass {
 
         html {
             max-height: 100vh;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
 
         .nikeSvg{
@@ -592,16 +632,12 @@ header #DMButton.darkModeClass {
         }
 
         header div {
-            max-height: 2em;
-        }
-
-        body {
             height: fit-content;
         }
 
         :root{
-            --grote--text: 0.6rem;
-            --button--text: 0.5rem;
+            --grote--text: 0.75rem;
+            --button--text: 0.65rem;
         }
 
         .container {
@@ -616,8 +652,8 @@ header #DMButton.darkModeClass {
 
         .lijstVerbergen {
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            animation: lijstVerbergen 0.3s
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstVerbergen 0.2s
         }
 
         @keyframes lijstVerbergen {
@@ -631,8 +667,8 @@ header #DMButton.darkModeClass {
 
         .lijstTonen {
             opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-            animation: lijstTonen 0.3s;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstTonen 0.2s;
         }
 
         @keyframes lijstTonen {
@@ -644,7 +680,7 @@ header #DMButton.darkModeClass {
         }
 
         .buttonVerbergen {
-            animation: buttonVerbergen 0.3s;
+            animation: buttonVerbergen 0.2s;
             opacity: 0;
         }
 
@@ -660,7 +696,7 @@ header #DMButton.darkModeClass {
         }
 
         .buttonTonen {
-            animation: buttonTonen 0.3s;
+            animation: buttonTonen 0.2s;
             opacity: 1;
         }
 
@@ -674,29 +710,27 @@ header #DMButton.darkModeClass {
             }
         }
 
+
         .schoen {
             height: fit-content;
-            padding-bottom: 2em;
-            padding: 0;
+            
         }
 
         .content {
             height: fit-content;
             overflow: hidden;
-            /* padding-bottom: 3em; */
+            min-height: 15em;
         }
 
         .content h2 {
             margin: 0 0.5em;
-
         }
 
         .knoppen {
             overflow-x: hidden;
             overflow-y: auto;
-            max-height: 15em;
+            max-height:15;
             padding: 0;
-            display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 3em 3em 3em 3em 3em;
             grid-template-areas: 
@@ -718,14 +752,6 @@ header #DMButton.darkModeClass {
             font-size: var(--button--text);
         }
 
-        /* #deLijst {
-            position: absolute;
-            right: 50%;
-            transform: translateX(50%);
-            z-index: 10;
-            width: 100%;
-        } */
-
         #deLijst .schoen img {
             width:3em;
         }
@@ -741,24 +767,188 @@ header #DMButton.darkModeClass {
     @media only screen 
     and (min-width: 480px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 24em;
+            width: 100%;
+            max-width: 44em;
             margin: auto;
             height: auto;
+        }
+
+        html {
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+
+        .nikeSvg{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.85rem;
+            --button--text: 0.75rem;
+        }
+
+        .container {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header"
+            "schoen"
+            "knoppen"
+            ;
+        }
+
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstVerbergen 0.2s
+        }
+
+        @keyframes lijstVerbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstTonen 0.2s;
+        }
+
+        @keyframes lijstTonen {
+            from {
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
+        }
+
+        .buttonVerbergen {
+            animation: buttonVerbergen 0.2s;
+            opacity: 0;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
+            
+        }
+
+        .buttonTonen {
+            animation: buttonTonen 0.2s;
+            opacity: 1;
+        }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+
+        .schoen {
+            height: fit-content;
+            
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+            min-height: 15em;
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height:15;
+            padding: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
 
        
     }
 
+    @media only screen 
+    and (min-height: 1000px) {
+        
+    }
 
     @media only screen 
-    and (min-width: 600px) {
+    and (min-width: 1000px) {
         #schoenFoto, #bovenZool, #onderZool, #bodyAchter, #bodyMidden, #bodyVoor, #logo, #neus{
-            width: 40em;
+            width: 100%;
             margin: auto;
             height: auto;
         }
 
-       
+        html {
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .nikeSvg{
+            width: 3em;
+            height: auto;
+        }
+
+        header div {
+            height: fit-content;
+        }
+
+        :root{
+            --grote--text: 0.85rem;
+            --button--text: 0.75rem;
+        }
 
         .container {
             grid-template-columns: auto;
@@ -769,6 +959,118 @@ header #DMButton.darkModeClass {
             ;
             height: 60em;
             max-width: 100em;
+        }
+
+        .lijstVerbergen {
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstVerbergen 0.2s
+        }
+
+        @keyframes lijstVerbergen {
+            from {
+                transform: translateX(0);
+
+            } to {
+                transform: translateX(-2em);
+            }
+        }
+
+        .lijstTonen {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            animation: lijstTonen 0.2s;
+        }
+
+        @keyframes lijstTonen {
+            from {
+                transform: translateX(-2em);
+            } to {
+                transform: translateX(0);
+            }
+        }
+
+        .buttonVerbergen {
+            animation: buttonVerbergen 0.2s;
+            opacity: 0;
+        }
+
+        @keyframes buttonVerbergen {
+            from {
+                opacity: 1;
+                transform: translateY(0em);
+            } to { 
+                opacity: 0;
+                transform: translateY(2em);
+            }
+            
+        }
+
+        .buttonTonen {
+            animation: buttonTonen 0.2s;
+            opacity: 1;
+        }
+
+        @keyframes buttonTonen {
+            from {
+                opacity: 0;
+                transform: translateY(2em);
+            } to {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+
+        .schoen {
+            height: fit-content;
+            
+        }
+
+        .content {
+            height: fit-content;
+            overflow: hidden;
+            min-height: 15em;
+        }
+
+        .content h2 {
+            margin: 0 0.5em;
+        }
+
+        .knoppen {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height:15;
+            padding: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 3em 3em 3em 3em 3em;
+            grid-template-areas: 
+            "bovenZool onderZool bodyVoor"
+            "bodyMidden bodyAchter logo"
+            "neus . reset"
+            "input input input"
+            "save save save"
+            ;
+        }
+
+        .knoppen .button {
+            width: 5em;
+        }
+
+        #inputVak {
+            justify-self: center;
+            align-self: center;
+            font-size: var(--button--text);
+        }
+
+        #deLijst .schoen img {
+            width:3em;
+        }
+
+        #deLijst h4 {
+            font-size: var(--button--text);
+            
+            
         }
         
        
@@ -782,12 +1084,25 @@ header #DMButton.darkModeClass {
 /* KEYBOARD ACCESSIBILITY */
 /***************************/
 
-.knoppen button:focus {
-    transform: scale(1.05);
-    transition: scale 0.3s;
+/* .knoppen button:focus {
+    transform: scale(1.025);
+    transition: scale 0.2s;
 }
 
 .knoppen input:focus {
-    transform: scale(1.05);
-    transition: scale 0.3s;
-}
+    transform: scale(1.025);
+    transition: scale 0.2s;
+} */
+
+
+
+/* .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header"
+    "schoen knoppen"
+    ;
+    height: 60em;
+    max-width: 100em;
+} */

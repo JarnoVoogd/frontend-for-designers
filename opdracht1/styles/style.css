@@ -164,13 +164,25 @@ body:hover span:first-child:before{
 }
 
 @media only screen 
-    and (max-width: 820px) {
+    and (max-width: 400px) {
+		body{
+			transform: scale(0.3);
+		}
+}
+
+
+@media only screen 
+    and (min-width: 400px) {
 		body{
 			transform: scale(0.5);
-			/* margin-left: 50%;
-			transform: translateX(-50%); */
 		}
+}
 
+@media only screen 
+    and (min-width: 850px) {
+		body{
+			transform: scale(1);
+	}
 }
 
 @keyframes klmBalkje {

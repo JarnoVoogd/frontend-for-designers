@@ -16,10 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Bronnenlijst
   1. [Mozilla before/after](https://developer.mozilla.org/en-US/docs/Web/CSS/::before)
   2. [W3 Schools animations](https://www.w3schools.com/css/css3_animations.asp)
-  2. [Css tricks before/after](https://css-tricks.com/almanac/selectors/a/after-and-before/)
-
-  
-
+  3. [Css tricks before/after](https://css-tricks.com/almanac/selectors/a/after-and-before/)
+  4. [Css tricks filter](https://css-tricks.com/almanac/properties/f/filter/)
+  5. [Css tricks transition](https://css-tricks.com/almanac/properties/t/transition/)
+  6. [Mozilla querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+  7. [W3 Schools focus](https://www.w3schools.com/jsref/met_html_focus.asp)
+  8. [Css tricks grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+  9. [Mozilla css animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 
 
 ## Opdracht 1 plan
@@ -86,7 +89,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je ontwerp:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="ontwerp opdracht 2">
+  <img src="opdracht2\images\ontwerp.png" width="375px" alt="ontwerp opdracht 2">
 
 
   ### Je ambitie: 
@@ -149,8 +152,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   #### oplossing:
   Ik heb een functie geschreven waarmee de gebruiker een naam kan geven aan de gemaakte creatie, als de gebruiker geen naam in heeft gevuld kan de creatie niet opgeslagen worden.
 
-  <img src="opdracht2\images\beoordeling.png" width="375px" alt="beoordeling opdracht 2">
-  <img src="opdracht2\images\beoordeling2.png" width="375px" alt="beoordeling opdracht 2">
+  <img src="opdracht2\images\eindproduct1.png" width="375px" alt="eindproduct opdracht 2">
+  <img src="opdracht2\images\eindproduct2.png" width="375px" alt="eindproduct opdracht 2">
 </details>
 
 

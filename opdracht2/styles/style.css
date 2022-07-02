@@ -157,12 +157,12 @@ header #DMButton {
     height: fit-content;
     justify-self: end;
     align-self: center;
-    transition: all 0.15s ease;
+    transition: all 0.15s ease-in-out;
 }
 
 header #DMButton:hover {
     transform: scale(1.025);
-    transition: all 0.15s ease;
+    transition: all 0.15s ease-in-out;
     box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
@@ -283,49 +283,54 @@ header #DMButton.darkModeClass {
     padding: 1em 0.7em;
     margin: 0.5em 1em;
     cursor: pointer;
-    transition: transform 0.2s ease;
-    transition: filter 1s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: filter 2s ease-in-out;
+    /* transition: background-color 1s; */
 }
  
 .knoppen button:hover {
     transform: scale(1.025);
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
     box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 .knoppen #save:hover, .knoppen #inputVak:hover {
     transform: scale(1.005);
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
     box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 .knoppen button.darkModeClass {
     filter: invert(100%);
-    transition: filter 1s ease-in-out;
+    transition: filter 2s ease-in-out;
 }
 
 .knoppen button:active {
     filter: invert(100%);
     transition: filter 0s ease-in-out;
+    /* background-color: var(--darkMode-text-black);
+    transition: background-color 0s; */
 }
 
 .knoppen button.darkModeClass:active {
     filter: invert(0%);
     transition: filter 0s;
-    
-    
+    /* background-color: var(--color-text);
+    transition: background-color 2s; */
 }
+    
+    
 
 .knoppen #resetButton, #save, #creatie, #toonCreaties{
     background-color: var(--color--background-grey);
     color: var(--color-text);
     border: 0.15em solid var(--color-text);
-    transition: filter 1s;
+    transition: filter 2s ease-in-out;
 }
 
 .knoppen #resetButton.darkModeClass, #save.darkModeClass, #creatie.darkModeClass, #toonCreaties.darkModeClass{
     filter: invert(100%);
-    transition: filter 1s;
+    transition: filter 2s ease-in-out;
 }
 
 .knoppen #resetButton.darkModeClass:active, #save.darkModeClass:active, #creatie.darkModeClass:active, #toonCreaties.darkModeClass:active{
@@ -388,18 +393,18 @@ header #DMButton.darkModeClass {
     width: 95%;
     margin: 0.5em 1em;
     transition: scale 0.2s ease-in-out;
-    transition: filter 1s ease-in-out;
+    transition: filter 2s ease-in-out;
 }
 
 #inputVak:hover {
     transform: scale(1.025);
-    transition: scale 0.2s ease;
+    transition: scale 0.2s ease-in-out;
     box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 }
 
 #inputVak.darkModeClass {
     filter: invert(100%);
-    transition: all 1s ease-in-out;
+    transition: filter 2s ease-in-out;
 }
 
 #inputVak.darkModeClass:focus {

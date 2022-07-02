@@ -474,6 +474,7 @@ let checkVisibility = () => {
         toonButton.innerHTML = "Verberg creaties"
         toonButton.classList.add("buttonVerbergen")
         toonButton.classList.remove("buttonTonen")
+        
     }
 }
 

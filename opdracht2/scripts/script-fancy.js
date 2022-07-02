@@ -225,12 +225,16 @@ let lijstMetCreaties = [];
 // functie die de creatie opslaat in een lokale array
 // en die array ook in localstorage opslaat om die voor later gebruik te onthouden
 let creatieOpslaan = () => {
+    // check of er 8 schoenen opgeslagen zijn
+    if (lijstMetCreaties.length == 8){
+        meldingTonen("U heeft het maximum van 8 creaties bereikt")
+}
     // gebruiker attenderen dat er nog geen naam is ingevuld
-    if (huidigeCreatie.naam == "") {
+    else if (huidigeCreatie.naam == "") {
         // feedback richting gebruiker tonen 
         meldingTonen("Geef uw creatie een naam");
     }
-    
+
     // anders de schoen opslaan
     // en de gebruiker laten weten dat dat gelukt is
     else {
@@ -353,13 +357,17 @@ let updateCreaties = () => {
         verwijderButton.addEventListener("click", creatieVerwijderen);
     });
 
+    // de lijst met creaties tonen of verbergen adhv de toegeschreven class
     if (lijst.classList.contains("lijstVerbergen")){
     lijst.classList.remove("lijstVerbergen");
     lijst.classList.add("lijstTonen");
     }  
-      
+    
     checkVisibility();
 
+    // het input veld leegmaken
+    // let input = document.querySelector("#naamInput");
+    // input.value = "";
 }
 
 
@@ -406,19 +414,13 @@ let body = document.querySelector("body");
 let svg = document.querySelector(".nikeSvg");
 let div = document.querySelector(".stylingDiv");
 let container = document.querySelector(".container");
-let onderZool = document.getElementById("onderZoolButton");
-let bovenZool = document.getElementById("bovenZoolButton");
-let bodyAchter = document.getElementById("bodyAchterButton");
-let bodyVoor = document.getElementById("bodyVoorButton");
-let bodyMidden = document.getElementById("bodyMiddenButton");
-let neus = document.getElementById("neusButton");
-let logo = document.getElementById("logoButton");
-let reset = document.getElementById("resetButton");
-let creaties = document.getElementById("toonCreaties");
-let save = document.getElementById("save");
-let input = document.getElementById("inputVak")
+let buttons = document.querySelector(".knoppen").querySelectorAll("button");
+let input = document.getElementById("inputVak");
 
-
+let knoppenFunctie = () => {
+    for (let i = 0; i < buttons.length; i++ )
+    buttons[i].classList.toggle("darkModeClass");
+}
 
 let darkModeToggle = () => {
     darkModeButton.classList.toggle("darkModeClass");
@@ -426,19 +428,11 @@ let darkModeToggle = () => {
     body.classList.toggle("darkModeClass");
     div.classList.toggle("darkModeClass");
     container.classList.toggle("darkModeClass");
-    onderZool.classList.toggle("darkModeClass");
-    bovenZool.classList.toggle("darkModeClass");
-    bodyAchter.classList.toggle("darkModeClass");
-    bodyMidden.classList.toggle("darkModeClass");
-    bodyVoor.classList.toggle("darkModeClass");
-    neus.classList.toggle("darkModeClass");
-    logo.classList.toggle("darkModeClass");
-    reset.classList.toggle("darkModeClass");
-    creaties.classList.toggle("darkModeClass");
-    save.classList.toggle("darkModeClass");
     input.classList.toggle("darkModeClass");
 
+    knoppenFunctie()
 
+    // tekst in de button aanpassen adhv de toegeschreven class
     if (darkModeButton.classList.contains("darkModeClass")) {
         darkModeButton.innerHTML = "Light mode";
     } else {
@@ -454,6 +448,7 @@ let darkModeToggle = () => {
 let toonButton = document.getElementById("toonCreaties") 
 let lijst = document.getElementById("deLijst");
 
+// de lijst met creaties tonen/verbergen adhv de toegescreven class
 let toonCreatiesKleinScherm = () => {
     if (lijst.classList.contains("lijstVerbergen")) {
         lijst.classList.remove("lijstVerbergen");
@@ -467,6 +462,9 @@ let toonCreatiesKleinScherm = () => {
     checkVisibility();
 } 
 
+// als de lijst leeg is de button automatisch verbergen
+// als de lijst items bevat de button tonen
+// de tekst in de button aanpassen adhv de status van de lijst
 let checkVisibility = () => {
     if (lijstMetCreaties.length > 0) {
         toonButton.classList.remove("buttonVerbergen")
@@ -480,8 +478,11 @@ let checkVisibility = () => {
         toonButton.innerHTML = "Verberg creaties"
         toonButton.classList.add("buttonVerbergen")
         toonButton.classList.remove("buttonTonen")
+        
     }
 }
+
+
 // document.querySelector("#toonCreaties").addEventListener("click", toonCreatiesKleinScherm())
 
 // if (lijstMetCreaties >= 0) {

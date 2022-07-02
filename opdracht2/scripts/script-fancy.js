@@ -225,12 +225,16 @@ let lijstMetCreaties = [];
 // functie die de creatie opslaat in een lokale array
 // en die array ook in localstorage opslaat om die voor later gebruik te onthouden
 let creatieOpslaan = () => {
+    // check of er 8 schoenen opgeslagen zijn
+    if (lijstMetCreaties.length == 8){
+        meldingTonen("U heeft het maximum van 8 creaties bereikt")
+}
     // gebruiker attenderen dat er nog geen naam is ingevuld
-    if (huidigeCreatie.naam == "") {
+    else if (huidigeCreatie.naam == "") {
         // feedback richting gebruiker tonen 
         meldingTonen("Geef uw creatie een naam");
     }
-    
+
     // anders de schoen opslaan
     // en de gebruiker laten weten dat dat gelukt is
     else {

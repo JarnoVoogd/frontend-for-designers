@@ -115,7 +115,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   De pagina is nog niet volledig responsive van groot naar klein scherm.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb de pagina volledig responsive gemaakt, in elke stap tussen mobile en web.
 
 
 
@@ -131,7 +131,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   De pagina heeft nog geen dark mode voor gebruikers die hier gebruik van willen maken.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb de volledige pagina dark mode - friendly gemaakt. I.p.v dat ik het automatisch laat gaan heb ik een knop gemaakt waarmee de gebruiker zelf kan bepalen welke mode hij wil gebruiken. Ik heb dit gedaan omdat de achtergrond kleur van de pagina invloed kan hebben op hoe de kleuren op de schoen eruit zien.
 
 
 
@@ -139,7 +139,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   De gebruiker kan maar één schoen opslaan en terughalen.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb hulp van meneer t'Hooft gekregen hiermee, de gebruiker kan nu tot 8 creaties opslaan. Zit de gebruiker op 8 en wil hij er nog een toevoegen? Dan krijgt hij een melding.
 
 
 
@@ -147,7 +147,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   De gebruiker kan geen naam geven aan zijn/haar creatie.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb een functie geschreven waarmee de gebruiker een naam kan geven aan de gemaakte creatie, als de gebruiker geen naam in heeft gevuld kan de creatie niet opgeslagen worden.
+
+  <img src="opdracht2\images\beoordeling.png" width="375px" alt="beoordeling opdracht 2">
+  <img src="opdracht2\images\beoordeling2.png" width="375px" alt="beoordeling opdracht 2">
 </details>
 
 
@@ -158,17 +161,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
+  <img src="opdracht2\images\eindproduct2.png" width="375px" alt="uitkomst opdracht 2">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Ik heb geleerd dat ik gebruik kan maken van "stuctured clone" om relatief gemakkelijk gemaakte creaties op te slaan. Ook heb ik veel geleerd over het stuctureren van mijn JS, efficienter schrijven van functies, hoe ik de opgeslagen data mooi kan presenteren op het scherm en om beter gebruik te maken van objecten en de voordelen daarvan.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="opdracht2\images\code2.png" width="375px" alt="top">
+  <img src="opdracht2\images\code3.png" width="375px" alt="top">
+
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  Het is mij niet gelukt om de schaduw mooi te maken in dark mode, dit is meer een photoshop probleem maar dit hoort ook bij het uiterlijk van de pagina. Verder heb ik eigenlijk mijn doelen overtroffen en ben ik heel erg tevreden met mijn eindproduct
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="opdracht2\images\eindproduct1.png" width="375px" alt="bummer">
 </details>
